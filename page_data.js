@@ -1,4 +1,4 @@
-// total.json 272건 데이터에 대해서
+// total.json 227건 데이터에 대해서
 // 10건씩 하나의 리스트로 담아서 저장하기
 
 // 아래는 total.json 파일이다.
@@ -11,22 +11,20 @@ function paginateData(dataList, pageSize){
     let pagedList = []
     let list =[]
     let item;
-    for(let i=0; i<dataLength; i++){
-        if(i==0){
-            item = {...dataList[i]} // totalData와 분리
-            list.push(item)
-        }
-        if(i % pageSize !=0){
-            item = {...dataList[i]}
-            list.push(item)
-        } else{
-            if(i !=0){
-                pagedList.push(list);
 
-                list =[]
-                item = {...dataList[i]}
+    for(let i=1; i<dataLength; i++){
+        if(i % pageSize !=0){
+            if(i==1){
+                item = {...dataList[0]}
                 list.push(item)
             }
+            item = {...dataList[i]}
+            list.push(item)
+        } else{   //10 의 배수
+            pagedList.push(list)
+            list =[]
+            item = {...dataList[i]}
+            list.push(item)
         }
 
         if(i == dataLength -1){
@@ -39,10 +37,44 @@ function paginateData(dataList, pageSize){
 }
 
 
+// function paginateData(dataList, pageSize){
+//     const dataLength = dataList.length;
+//     let pagedList = []
+//     let list =[]
+//     let item;
+//     for(let i=0; i<dataLength; i++){
+//         if(i==0){
+//             item = {...dataList[i]} // totalData와 분리
+//             list.push(item)
+//         }
+//         if(i % pageSize !=0){
+//             item = {...dataList[i]}
+//             list.push(item)
+//         } else{
+//             if(i !=0){
+//                 pagedList.push(list);
+
+//                 list =[]
+//                 item = {...dataList[i]}
+//                 list.push(item)
+//             }
+//         }
+
+//         if(i == dataLength -1){
+//             pagedList.push(list)
+//         }
+//     }
+//     console.log('pagedList :', pagedList)
+//     console.log('length :', pagedList.length)
+//     return pagedList;
+// }
+
+
+
 
 const total = {
     "status": "ok",
-    "totalResults": 272,
+    "totalResults": 227,
     "articles": [
         {
             "source": {
@@ -3001,4 +3033,6 @@ const total = {
 
 totalData = total.articles;
 
-paginatedList = paginateData(totalData, pageSize)
+paginatedList = paginateData(totalData, pageSize)  // 23
+console.log('total.articles.length :', total.articles.length)  // 227
+
