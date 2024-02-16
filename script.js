@@ -38,7 +38,9 @@ function render(){
     newsBoard.innerHTML = newsHTML;
 }
 
-
+function getDetail(url){
+     window.location.href = url;
+}
 
 function handleFileInput(event){
     const file = event.target.files[0];
