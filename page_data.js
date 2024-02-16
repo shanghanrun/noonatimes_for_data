@@ -4,36 +4,41 @@
 // 아래는 total.json 파일이다.
 let totalData=[];    // total.articles  를 아래에서 할당할 것이다.
 const pageSize =10;
-const paginationedList=[]
+let paginatedList=[]
 
-function paginationData(){
-    const totalDataLength = totalData.length;
+function paginateData(dataList, pageSize){
+    const dataLength = dataList.length;
+    let pagedList = []
     let list =[]
     let item;
-    for(let i=0; i<totalDataLength; i++){
+    for(let i=0; i<dataLength; i++){
         if(i==0){
-            item = {...totalData[i]} // totalData와 분리
+            item = {...dataList[i]} // totalData와 분리
             list.push(item)
         }
         if(i % pageSize !=0){
-            item = {...totalData[i]}
+            item = {...dataList[i]}
             list.push(item)
         } else{
             if(i !=0){
-                paginationedList.push(list);
+                pagedList.push(list);
 
                 list =[]
-                item = {...totalData[i]}
+                item = {...dataList[i]}
                 list.push(item)
             }
         }
 
-        if(i == totalDataLength -1){
-            paginationedList.push(list)
+        if(i == dataLength -1){
+            pagedList.push(list)
         }
     }
-    console.log(paginationedList)
+    console.log('pagedList :', pagedList)
+    console.log('length :', pagedList.length)
+    return pagedList;
 }
+
+
 
 const total = {
     "status": "ok",
@@ -2996,4 +3001,4 @@ const total = {
 
 totalData = total.articles;
 
-paginationData()
+paginatedList = paginateData(totalData, pageSize)
