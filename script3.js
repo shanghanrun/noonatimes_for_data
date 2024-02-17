@@ -18,21 +18,28 @@ const replaceImage = 'noonatimes.png'
 let totalData=[];    // total.articles  를 아래에서 할당할 것이다.
 let paginatedDataList=[]  // [[{}..10개][{}...10개]...[]]
 // showingList = paginatedDataList[page-1]
-let dataPointer;
 let totalResults 
 let paginatedDataListLength 
 let page =1
 const pageSize =10 // 한페이지에 보여질 item갯수
 const groupSize =5
 let group   // 리스트자료 [1,2,3,4,5] 식
+let groups  // [ [1,2,3,4,5], [6,7,8,9,10],......]
 let groupIndex =0;
 let currentIndex = 0;     //해당그룹에서 위치 인덱스 [1,2,3,4,5] 에서
 // 2 페이지를 보여주고 있다면 currentIndex는 1
 
-let prevStatus = "disabled";
-let nextStatus = '';
+// const totalPages = Math.ceil(totalResults / pageSize) // 23
+// 여기서 값을 정하려 하면 '오류'가 난다. 그 이유는 totalResults가 아직 정해지지 않았기 때문이다.
+// 저 맨 아래에서 totalPages를 정해야 된다.
 
 
+
+
+/**
+ * totalData = total.articles;  // [{},{},{},{}....]
+ * paginatedDataList = paginateData(totalData, pageSize)  // [ [{}..10개]...23개 ] 
+ */
 
 function paginateData(dataList, pageSize){
     const dataLength = dataList.length;
@@ -64,14 +71,14 @@ function paginateData(dataList, pageSize){
     return pagedList;
 }
 
-function makeGroups(totalItems, gSize){
-    const totalPages = Math.ceil(totalItems / pageSize)  // 227 / 10 --> 23
+function makeGroups(){
+    // const totalPages = Math.ceil(totalResults / pageSize)  // 227 / 10 --> 23
     console.log(totalPages)
-    let groups =[]
+    groups =[]
     let list =[]
     for(let i=1; i<=totalPages; i++){
         
-        if( i % gSize != 0){
+        if( i % groupSize != 0){
             if( i==1){
                 list.push(i)   // [1]
             }
@@ -115,7 +122,7 @@ function makePaginationHTML(groupIndex){   // 1, 2, 3...
         return `<button class="page-btn" id="page" onclick="moveToPage(${i})">${i}</button>`
         }).join('')
 
-    paginationHTML += `<li class="next-li"><button class="page-btn" id="next" onclick="moveToPage(${page+1})">Next</button></li><li class="next-li"><button class="page-btn" id="next-page" onclick="moveToPage('next page')">next page</button></li>`
+    paginationHTML += `<li class="next-li"><button class="page-btn" id="next" onclick="moveToPage(${page+1})">Next</button></li><li class="next-li"><button class="page-btn" id="next-page" onclick="moveToPage('next page')">next page</button><span>${page} of ${totalPages} pages</span></li>`
 
 
     return paginationHTML;
@@ -3210,13 +3217,14 @@ const total = {
 
 totalData = total.articles;
 
-paginatedDataList = paginateData(totalData, pageSize)  // 23
+paginatedDataList = paginateData(totalData, pageSize)  // [ []...23개 ]
 console.log('total.articles.length :', total.articles.length)  // 227
 
 totalResults = total.articles.length;
 pageinatedListLength = paginatedDataList.length 
+totalPages = Math.ceil(totalResults / pageSize) // 23
 
-groups = makeGroups(totalResults, groupSize)
+groups = makeGroups()
 
 
 render()
