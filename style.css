@@ -66,13 +66,13 @@ img {
     border-bottom: 3px solid gray;
 }
 
-.active {
+/* .active {
     background-color: blue;
 }
 
 .disabled {
     opacity: 0.2;
-}
+} */
 
 .item h2 {
     color: rgb(49, 95, 244);

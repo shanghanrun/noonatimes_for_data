@@ -1,10 +1,39 @@
-// total.json 227건 데이터에 대해서
-// 10건씩 하나의 리스트로 담아서 저장하기
+let newsList=[
+    {
+        "source": {
+            "id": "",
+            "name": "Noona Times"
+        },
+         "author": "초코",
+            "title": "여신의 품격: 장원영(Ive) vs 코딩누나(코눈)",
+            "description": "<h5>장원영, 코딩 알려주는 누나와 쌍벽을 이루는 미모</br>'아이즈원'으로 혜성처럼 데뷰해서 꾸준한 인기를 얻어가던 장원영은 새로운 그룹 'Ive'의 리더로 활동하며 글로벌 명성을 이어가고 있다. 한편 코딩계에서 별똥별처럼 반짝이며 등장한 김빛나씨는 미모 뿐만 아니라 뛰어난 실력 및 유머로 챗지피티에게 소문이 날 정도이다. 이 둘의 대결이 어떻게 될 지 흥미진진하다. 코딩누나 살짝 긴장 좀 해야 겠다!! </h5>",
+        "url": "https://cdn.inflearn.com/public/users/thumbnails/694277/60d324e4-719f-4551-8f3c-f377b7eb1f78",
+        "urlToImage": "https://truth.bahamut.com.tw/s01/202209/bb7dd87e8f4d1d0ca3a7d735f873eb38.JPG",
+        "publishedAt": "2024.01.30",
+        "content": ""
+    },
+]
+const replaceImage = 'noonatimes.png'
 
-// 아래는 total.json 파일이다.
 let totalData=[];    // total.articles  를 아래에서 할당할 것이다.
-const pageSize =10;
-let paginatedList=[]
+let paginatedDataList=[]  // [[{}..10개][{}...10개]...[]]
+// dataPointer = groupIndex * 10 + currentIndex
+// 출력list = paginatedDataList[dataPointer]
+let dataPointer;
+let totalResults 
+let paginatedDataListLength 
+let page =1
+const pageSize =10 // 한페이지에 보여질 item갯수
+const groupSize =5
+let group   // 리스트자료 [1,2,3,4,5] 식
+let groupIndex =0;
+let currentIndex = 0;     //해당그룹에서 위치 인덱스 [1,2,3,4,5] 에서
+// 2 페이지를 보여주고 있다면 currentIndex는 1
+
+let prevStatus = "disabled";
+let nextStatus = '';
+
+
 
 function paginateData(dataList, pageSize){
     const dataLength = dataList.length;
@@ -36,39 +65,172 @@ function paginateData(dataList, pageSize){
     return pagedList;
 }
 
+function makeGroups(totalItems, gSize){
+    let groups =[]
+    let list =[]
+    for(let i=1; i<=totalItems; i++){
+        
+        if( i % gSize != 0){
+            if( i==1){
+                list.push(i)   // [1]
+            }
+            list.push(i+1)     // 2, 3, 4, 5
+        } else{           // 5의 배수
+            groups.push(list)   // [1,2,3,4,5]
+            list =[]
+            list.push(i+1)       // [6]
+        }
+    
+        if ( i == totalItems){
+            groups.push(list)
+        }
+    }
+    console.log('groups : ', groups)
+    console.log('groups.length : ', groups.length)
+    return groups
+}
 
-// 보다 직관적인 로직을 위해 위의 함수로 대체한다. 
-//function paginateData(dataList, pageSize){
-//     const dataLength = dataList.length;
-//     let pagedList = []
-//     let list =[]
-//     let item;
-//     for(let i=0; i<dataLength; i++){
-//         if(i==0){
-//             item = {...dataList[i]} // totalData와 분리
-//             list.push(item)
-//         }
-//         if(i % pageSize !=0){
-//             item = {...dataList[i]}
-//             list.push(item)
-//         } else{
-//             if(i !=0){
-//                 pagedList.push(list);
+function makePaginationHTML(groupIndex){   // 1, 2, 3...
+    
+    const currentGroup = groupIndex      // nextGroup을 다루기 위해 변수 필요
+    group = groups[currentGroup]  // 첫번째 그룹은 groups[0]  
+                       // [1,2,3,4,5] 혹은 [6,7,8,9,10]
+    
 
-//                 list =[]
-//                 item = {...dataList[i]}
-//                 list.push(item)
-//             }
-//         }
+    // 일단 페이지번호만 메긴다면
+    // let paginationHTML = group.map(i => {
+    //     return `<button onclick="moveToPage(${i})">${i}</button>`
+    //     }).join('')
 
-//         if(i == dataLength -1){
-//             pagedList.push(list)
-//         }
-//     }
-//     console.log('pagedList :', pagedList)
-//     console.log('length :', pagedList.length)
-//     return pagedList;
-// }
+    // 나중에 <<prev page,   next page>> 를 누르는 버튼
+    // 이걸 누르면 groupIndex--    groupIndex++ ; render()
+
+
+    let paginationHTML =`<li class="prev-li"><div id="prev-page" onclick="moveToPage('prev page')">prev page</div></li><li class="page-li"><div id="prev" onclick="moveToPage(${page-1})">Prev</div></li>`;
+    // page가 전역변수라서 page-1 이 최신페이지에서 이전페이지가 된다.
+    
+    paginationHTML += group.map(i => {
+        return `<button id="page" onclick="moveToPage(${i})">${i}</button>`
+        }).join('')
+
+    paginationHTML += `<li class="next-li"><div id="next" onclick="moveToPage(${page+1})">Next</div></li><li class="next-li"><div id="next-page" onclick="moveToPage('next page')">next page</div></li>`
+
+
+    return paginationHTML;
+}
+
+function moveToPage(pageNo){
+    console.log('clicked!')
+    if(pageNo == 'prev page'){
+        groupIndex--
+        group = groups[groupIndex]
+        page = group[0]
+        currentIndex = 0
+    } else if(pageNo == 'next page'){
+        groupIndex++
+        group = groups[groupIndex]
+        page = group[0]
+        currentIndex =0
+    } else {
+        page = pageNo;   
+        currentIndex = group.indexOf(page)
+    } 
+
+    render() 
+
+}
+
+
+function render(){
+    dataPointer = groupIndex *10 + currentIndex
+    let showingList = paginatedDataList[dataPointer]
+    
+    const newsBoard = document.querySelector('#news-board')
+    newsBoard.innerHTML =''; //비우고 시작
+    const pagination = document.querySelector('.pagination');
+    pagination.innerHTML =''// 기존내용 삭제
+
+
+    const newsHTML = showingList.map(news => 
+        `<div class="row item">
+            <div class="col-lg-4">
+                        <img src=${news.urlToImage || replaceImage}  />
+                    </div>
+                    <div class="col-lg-8">
+                        <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
+                        <p>${news.content || news.description}</p>
+                        <div>
+                            ${news.source.name} : ${news.publishedAt} 
+                        </div>
+                    </div>
+            </div>
+        </div>
+    `).join('')
+
+    newsBoard.innerHTML = newsHTML;
+    pagination.innerHTML = makePaginationHTML(groupIndex)
+
+    console.log('page :', page)
+    console.log('currentIndex :', currentIndex)
+    console.log('groupIndex :', groupIndex)
+    console.log('group :', group)
+
+
+    // 바뀐 버튼 상태를 반영하기
+    const prev = document.querySelector('#prev')
+    const prevPage = document.querySelector('#prev-page')
+    const next = document.querySelector('#next')
+    const nextPage = document.querySelector('#next-page')
+
+    if(currentIndex ==0){
+        prev.disabled =true;
+        
+    } else if(currentIndex == groupSize-1){
+        next.disabled = true;
+    } else if(groupIndex ==0){
+        prevPage.disabled = true;
+    } else if(groupIndex == paginatedDataList.length-1){
+        //paginatedDataList = paginateData(totalData, pageSize)  // 23
+        nextPage.disabled = true;
+    }
+}
+
+
+function getDetail(url){
+     window.location.href = url;
+}
+
+function handleFileInput(event){
+    const file = event.target.files[0];
+    if(file){
+        const reader = new FileReader();
+    
+        // 2. 파일을 읽어온 후 실행되는 함수
+        reader.onload = (e) => {
+            const contents = e.target.result;
+            const data = JSON.parse(contents)
+            console.log('data: ', data)
+            console.log('data.status: ', data.status)
+            console.log('data.totalResults: ', data.totalResults)
+            
+            newsList = data.articles
+            console.log('newsList :', newsList)
+
+            render();
+            
+            // 여기서 파일 내용을 가지고 원하는 작업을 수행할 수 있습니다.
+        };
+        // 1. 파일을 읽어온다. (비동기)
+        reader.readAsText(file);
+    } else{
+        console.log('파일을 선택하지 않았습니다.')
+    }
+}
+
+
+
+
+
 
 
 
@@ -3034,6 +3196,13 @@ const total = {
 
 totalData = total.articles;
 
-paginatedList = paginateData(totalData, pageSize)  // 23
+paginatedDataList = paginateData(totalData, pageSize)  // 23
 console.log('total.articles.length :', total.articles.length)  // 227
 
+totalResults = total.articles.length;
+pageinatedListLength = paginatedDataList.length 
+
+groups = makeGroups(totalResults, groupSize)
+
+
+render()

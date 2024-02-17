@@ -3,6 +3,10 @@ const pageinatedListLength = 23
 let page =1
 const pageSize =10 // 한페이지에 보여질 item갯수
 const groupSize =5
+let groups;
+let groupIndex =0;
+
+
 let lastPage;
 let firstPage;
 let prevStatus = "disabled";
@@ -34,7 +38,7 @@ function makeGroups(totalItems, gSize){
     return groups
 }
 
-makeGroups(totalResults, groupSize)
+groups = makeGroups(totalResults, groupSize)
 
 
 
@@ -42,18 +46,21 @@ makeGroups(totalResults, groupSize)
 //! 저 아래의 페이지네이션 랜러는 다음과 같이 바뀌어야 된다.
 // 다음 랜더 함수의 인자로 그룹 번호가 들어간다. 처음에는 첫번째 그룹이니 1일 들어간다.
 
-function paginationRender(groupNumber){   // 1, 2, 3...
-    document.querySelector('.pagination').innerHTML ='' // 기존내용 삭제
-    const currentGroup = groupNumber      // nextGroup을 다루기 위해 변수 필요
-    const group = groups[currentGroup-1]  // 첫번째 그룹은 groups[0]  
+function makePaginationHTML(groupIndex){   // 1, 2, 3...
+    
+    const currentGroup = groupIndex      // nextGroup을 다루기 위해 변수 필요
+    const group = groups[currentGroup]  // 첫번째 그룹은 groups[0]  
                        // [1,2,3,4,5] 혹은 [6,7,8,9,10]
 
     // 일단 페이지번호만 메긴다면
     let paginationHTML = group.map(i => {
-        `<button onclick="moveToPage(${i})">${i}</button>`
+        return `<button onclick="moveToPage(${i})">${i}</button>`
         }).join('')
 
-    document.querySelector('.pagination').innerHTML = paginationHTML;
+    // 나중에 <<prev page,   next page>> 를 누르는 버튼
+    // 이걸 누르면 groupIndex--    groupIndex++ ; render()
+
+    return paginationHTML;
 }
 
 // 브라우저 첫화면에
@@ -70,7 +77,7 @@ function paginationRender(groupNumber){   // 1, 2, 3...
 // >>을 눌러서 다음 그룹을 선택할 때,
 //  if (nextGroup <= 46 )  이것을 만족할 때 화면을 랜더링한다.
 
-
+// 또한 groups[1][2] 식으로 페이지 접근도 가능하다.
 
 
 
