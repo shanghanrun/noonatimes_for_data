@@ -17,8 +17,7 @@ const replaceImage = 'noonatimes.png'
 
 let totalData=[];    // total.articles  를 아래에서 할당할 것이다.
 let paginatedDataList=[]  // [[{}..10개][{}...10개]...[]]
-// dataPointer = groupIndex * 10 + currentIndex
-// 출력list = paginatedDataList[dataPointer]
+// showingList = paginatedDataList[page-1]
 let dataPointer;
 let totalResults 
 let paginatedDataListLength 
@@ -66,9 +65,11 @@ function paginateData(dataList, pageSize){
 }
 
 function makeGroups(totalItems, gSize){
+    const totalPages = Math.ceil(totalItems / pageSize)  // 227 / 10 --> 23
+    console.log(totalPages)
     let groups =[]
     let list =[]
-    for(let i=1; i<=totalItems; i++){
+    for(let i=1; i<=totalPages; i++){
         
         if( i % gSize != 0){
             if( i==1){
@@ -81,7 +82,8 @@ function makeGroups(totalItems, gSize){
             list.push(i+1)       // [6]
         }
     
-        if ( i == totalItems){
+        if ( i == totalPages){
+            list.pop() //  i+1로 잘못 추가된 것 뺀다.
             groups.push(list)
         }
     }
@@ -106,14 +108,14 @@ function makePaginationHTML(groupIndex){   // 1, 2, 3...
     // 이걸 누르면 groupIndex--    groupIndex++ ; render()
 
 
-    let paginationHTML =`<li class="prev-li"><div id="prev-page" onclick="moveToPage('prev page')">prev page</div></li><li class="page-li"><div id="prev" onclick="moveToPage(${page-1})">Prev</div></li>`;
+    let paginationHTML =`<li class="prev-li"><button class="page-btn" id="prev-page" onclick="moveToPage('prev page')">prev page</button></li><li class="page-li"><button class="page-btn" id="prev" onclick="moveToPage(${page-1})">Prev</button></li>`;
     // page가 전역변수라서 page-1 이 최신페이지에서 이전페이지가 된다.
     
     paginationHTML += group.map(i => {
-        return `<button id="page" onclick="moveToPage(${i})">${i}</button>`
+        return `<button class="page-btn" id="page" onclick="moveToPage(${i})">${i}</button>`
         }).join('')
 
-    paginationHTML += `<li class="next-li"><div id="next" onclick="moveToPage(${page+1})">Next</div></li><li class="next-li"><div id="next-page" onclick="moveToPage('next page')">next page</div></li>`
+    paginationHTML += `<li class="next-li"><button class="page-btn" id="next" onclick="moveToPage(${page+1})">Next</button></li><li class="next-li"><button class="page-btn" id="next-page" onclick="moveToPage('next page')">next page</button></li>`
 
 
     return paginationHTML;
@@ -142,8 +144,7 @@ function moveToPage(pageNo){
 
 
 function render(){
-    dataPointer = groupIndex *10 + currentIndex
-    let showingList = paginatedDataList[dataPointer]
+    let showingList = paginatedDataList[page-1]
     
     const newsBoard = document.querySelector('#news-board')
     newsBoard.innerHTML =''; //비우고 시작
@@ -182,17 +183,30 @@ function render(){
     const next = document.querySelector('#next')
     const nextPage = document.querySelector('#next-page')
 
+    const endIndexOfTheGroup = group.length-1  //해당그룹의 마지막 인덱스
+
     if(currentIndex ==0){
         prev.disabled =true;
         
-    } else if(currentIndex == groupSize-1){
+    } else if(currentIndex == endIndexOfTheGroup){
         next.disabled = true;
-    } else if(groupIndex ==0){
+    } 
+    if(groupIndex ==0){
         prevPage.disabled = true;
-    } else if(groupIndex == paginatedDataList.length-1){
-        //paginatedDataList = paginateData(totalData, pageSize)  // 23
+    } else if(groupIndex == groups.length-1){
         nextPage.disabled = true;
     }
+
+    // 현재 페이지 버튼 활성화(진하게)
+    const pageButtons = document.querySelectorAll('.page-btn')
+    for( let pageButton of pageButtons){
+        if(pageButton.innerText == page.toString()){
+            pageButton.classList.add('active')
+        } else{
+            pageButton.classList.remove('active')
+        }
+    }
+
 }
 
 

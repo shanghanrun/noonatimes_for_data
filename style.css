@@ -63,16 +63,22 @@ img {
 
 .item {
     padding: 10px;
-    border-bottom: 3px solid gray;
+    border-bottom: 3px solid rgb(131, 153, 218);
 }
 
-/* .active {
-    background-color: blue;
+.page-btn {
+    border: 1px solid rgb(123, 123, 254);
+    border-radius: 5px;
+}
+
+.active {
+    background-color: rgb(123, 123, 254);
+    font-style: bold;
 }
 
 .disabled {
     opacity: 0.2;
-} */
+}
 
 .item h2 {
     color: rgb(49, 95, 244);
