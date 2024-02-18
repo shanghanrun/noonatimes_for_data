@@ -3500,7 +3500,7 @@ function search(){
     const articles = total.articles;
     let list =[]
     for (let article of articles){
-        if(article.title.split(value).length == 2){
+        if(article.title.split(value).length > 1){
             const item = {...article}  // 원본과 분리
             list.push(item)
         }
