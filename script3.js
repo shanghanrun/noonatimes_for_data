@@ -3,6 +3,7 @@ const total = {
     "totalResults": 227,
     "articles": [
         {
+            "category": "kr-enter",
             "source": {
                 "id": "",
                 "name": "Noona Times"
@@ -16,6 +17,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr-enter",
             "source": {
                 "id": null,
                 "name": "Donga.com"
@@ -29,6 +31,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr",
             "source": {
                 "id": null,
                 "name": "Dailymedi.com"
@@ -42,6 +45,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr",
             "source": {
                 "id": null,
                 "name": "Mt.co.kr"
@@ -55,6 +59,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr",
             "source": {
                 "id": null,
                 "name": "Hani.co.kr"
@@ -68,6 +73,7 @@ const total = {
             "content": null
         },
         {
+            "category": 'kr',
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -81,6 +87,7 @@ const total = {
             "content": null
         },
         {
+            "category": 'kr',
             "source": {
                 "id": null,
                 "name": "Donga.com"
@@ -94,6 +101,7 @@ const total = {
             "content": ""
         },
         {
+            "category": 'kr',
             "source": {
                 "id": null,
                 "name": "Hani.co.kr"
@@ -107,6 +115,7 @@ const total = {
             "content": null
         },
         {
+            "category": 'kr',
             "source": {
                 "id": null,
                 "name": "Yonhapnewstv.co.kr"
@@ -120,6 +129,7 @@ const total = {
             "content": ""
         },
         {
+            "category": 'kr-enter',
             "source": {
                 "id": null,
                 "name": "Chosun.com"
@@ -133,6 +143,7 @@ const total = {
             "content": null
         },
         {
+            "category": 'kr',
             "source": {
                 "id": null,
                 "name": "Kita.net"
@@ -146,6 +157,7 @@ const total = {
             "content": ""
         },
         {
+            "category": 'kr',
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -159,6 +171,7 @@ const total = {
             "content": null
         },
         {
+            "category": 'kr',
             "source": {
                 "id": null,
                 "name": "Yna.co.kr"
@@ -172,6 +185,7 @@ const total = {
             "content": ""
         },
         {
+            "category": 'kr-enter',
             "source": {
                 "id": null,
                 "name": "Koreadaily.com"
@@ -185,6 +199,7 @@ const total = {
             "content": ""
         },
         {
+            "category": 'kr-enter',
             "source": {
                 "id": null,
                 "name": "Munhwa.com"
@@ -198,6 +213,7 @@ const total = {
             "content": null
         },
         {
+            "category": 'kr',
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -211,6 +227,7 @@ const total = {
             "content": null
         },
         {
+            "category": 'kr',
             "source": {
                 "id": null,
                 "name": "Hani.co.kr"
@@ -224,6 +241,7 @@ const total = {
             "content": null
         },
         {
+            "category": 'kr',
             "source": {
                 "id": null,
                 "name": "Socialfocus.co.kr"
@@ -237,6 +255,7 @@ const total = {
             "content": ""
         },
         {
+            "category": 'kr',
             "source": {
                 "id": null,
                 "name": "Imbc.com"
@@ -250,6 +269,7 @@ const total = {
             "content": ""
         },
         {
+            "category": 'kr',
             "source": {
                 "id": null,
                 "name": "Chosun.com"
@@ -263,6 +283,7 @@ const total = {
             "content": null
         },
         {
+            "category": 'kr',
             "source": {
                 "id": null,
                 "name": "Chosun.com"
@@ -276,6 +297,7 @@ const total = {
             "content": null
         },
         {
+            "category": 'kr',
             "source": {
                 "id": null,
                 "name": "Seoul.co.kr"
@@ -289,6 +311,7 @@ const total = {
             "content": ""
         },
         {
+            "category": 'kr',
             "source": {
                 "id": null,
                 "name": "Voakorea.com"
@@ -302,6 +325,7 @@ const total = {
             "content": null
         },
         {
+            "category": 'kr',
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -315,6 +339,7 @@ const total = {
             "content": null
         },
         {
+            "category": 'kr',
             "source": {
                 "id": null,
                 "name": "Enewstoday.co.kr"
@@ -328,6 +353,7 @@ const total = {
             "content": ""
         },
         {
+            "category": 'kr',
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -341,6 +367,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "Chosun.com"
@@ -354,6 +381,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "Imbc.com"
@@ -367,6 +395,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "Gameple.co.kr"
@@ -380,6 +409,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr",
             "source": {
                 "id": null,
                 "name": "Hankyung.com"
@@ -393,6 +423,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "Mk.co.kr"
@@ -406,6 +437,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "Hankyung.com"
@@ -419,6 +451,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "Etnews.com"
@@ -432,6 +465,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "Bodnara.co.kr"
@@ -445,6 +479,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "Donga.com"
@@ -458,6 +493,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "Chosun.com"
@@ -471,6 +507,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -484,6 +521,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -497,6 +535,7 @@ const total = {
             "content": "그런 건 없답니다. ㅋㅋ"
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Isplus.com"
@@ -510,6 +549,7 @@ const total = {
             "content": "예쁜 사랑 하세요~"
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Hani.co.kr"
@@ -523,6 +563,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Chosun.com"
@@ -536,6 +577,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -549,6 +591,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -562,6 +605,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -575,6 +619,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Koreadaily.com"
@@ -588,6 +633,7 @@ const total = {
             "content": "컨텐트 에러"
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "News1.kr"
@@ -601,6 +647,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -614,6 +661,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Munhwa.com"
@@ -627,6 +675,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "Munhwa.com"
@@ -640,6 +689,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -653,6 +703,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -666,6 +717,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Mk.co.kr"
@@ -679,6 +731,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Isplus.com"
@@ -692,6 +745,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Hankyung.com"
@@ -705,6 +759,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Munhwa.com"
@@ -718,6 +773,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -731,6 +787,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -744,6 +801,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -757,6 +815,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Isplus.com"
@@ -770,6 +829,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Chosun.com"
@@ -783,6 +843,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Starnewskorea.com"
@@ -796,6 +857,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -809,6 +871,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -822,6 +885,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -835,6 +899,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -848,6 +913,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Mk.co.kr"
@@ -861,6 +927,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -874,6 +941,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Chosun.com"
@@ -887,6 +955,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -900,6 +969,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -913,6 +983,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "msnNOW"
@@ -926,6 +997,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -939,6 +1011,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -952,6 +1025,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "News1.kr"
@@ -965,6 +1039,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Autotribune.co.kr"
@@ -978,6 +1053,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Chosun.com"
@@ -991,6 +1067,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "msnNOW"
@@ -1004,6 +1081,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Hani.co.kr"
@@ -1017,6 +1095,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Mt.co.kr"
@@ -1030,6 +1109,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Chosun.com"
@@ -1043,6 +1123,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Mt.co.kr"
@@ -1056,6 +1137,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Chosun.com"
@@ -1069,6 +1151,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Chosun.com"
@@ -1082,6 +1165,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Spotvnews.co.kr"
@@ -1095,6 +1179,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Mt.co.kr"
@@ -1108,6 +1193,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -1121,6 +1207,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Chosun.com"
@@ -1134,6 +1221,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -1147,6 +1235,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -1160,6 +1249,7 @@ const total = {
             "content": null
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Starnewskorea.com"
@@ -1173,6 +1263,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Xportsnews.com"
@@ -1186,6 +1277,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Mt.co.kr"
@@ -1199,6 +1291,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Xportsnews.com"
@@ -1212,6 +1305,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "kr-enter", 
             "source": {
                 "id": null,
                 "name": "Mydaily.co.kr"
@@ -1225,6 +1319,7 @@ const total = {
             "content": ""
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "BBC News"
@@ -1238,6 +1333,7 @@ const total = {
             "content": "By Faarea Masud &amp; Natalie ShermanBusiness reporters\r\nElon Musk's X, formerly Twitter, granted subscription perks to designated terrorist groups and others barred from operating in the US, accordi… [+3886 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "CNBC"
@@ -1251,6 +1347,7 @@ const total = {
             "content": "SpaceX has filed to change its incorporation location to Texas from Delaware, according to public filings with the Texas Secretary of State.\r\nIt's the latest move by Elon Musk following a Delaware Ch… [+1240 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "CNBC"
@@ -1264,6 +1361,7 @@ const total = {
             "content": "In a Wednesday post-earnings interview with CNBC's Jim Cramer, Cisco CEO Chuck Robbins listed several factors that lead to a light quarterly and full-year forecast, including weakness in orders from … [+1091 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "CNBC"
@@ -1277,6 +1375,7 @@ const total = {
             "content": "Japan's economy dipped into a technical recession, after unexpectedly contracting again in the October-December period, provisional government data showed Thursday. High inflation crimped domestic de… [+2643 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": "financial-times",
                 "name": "Financial Times"
@@ -1290,6 +1389,7 @@ const total = {
             "content": "Warren Buffetts Berkshire Hathaway sold 10mn Apple shares in the last three months of 2023, cutting into a position that the so-called Oracle of Omaha has called one of the four giants that account f… [+3112 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": "reuters",
                 "name": "Reuters"
@@ -1303,6 +1403,7 @@ const total = {
             "content": null
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "SFGate"
@@ -1316,6 +1417,7 @@ const total = {
             "content": null
         },
         {
+            "category": "business", 
             "source": {
                 "id": "the-verge",
                 "name": "The Verge"
@@ -1329,6 +1431,7 @@ const total = {
             "content": "The best Presidents Day deals you can already get\r\nThe best Presidents Day deals you can already get\r\n / You can score savings on plenty of our favorite tech, from TVs and robovacs to games, earbuds,… [+10022 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Yahoo Entertainment"
@@ -1342,6 +1445,7 @@ const total = {
             "content": "SAN FRANCISCO (AP) Internet networking pioneer Cisco Systems is jettisoning more than 4,000 employees, joining the parade of technology companies in a trend that has helped boost their profits and st… [+3610 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "CNBC"
@@ -1355,6 +1459,7 @@ const total = {
             "content": "Nvidia surpassed Google parent Alphabet in market capitalization on Wednesday. It's the latest example of how the artificial intelligence boom has sent the chipmaker's stock soaring.\r\nNvidia rose ove… [+1569 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Yahoo Entertainment"
@@ -1368,6 +1473,7 @@ const total = {
             "content": "Morgan Stanley Analyst Adam Jonas is finding investor sentiment on Tesla (TSLA) to be turning bearish, he expressed in a recent note. Yahoo Finance Autos Reporter Pras Subramanian breaks down the thr… [+3062 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": "reuters",
                 "name": "Reuters"
@@ -1381,6 +1487,7 @@ const total = {
             "content": null
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Yahoo Entertainment"
@@ -1394,6 +1501,7 @@ const total = {
             "content": "<ul><li>Net Income: $1.33 billion for Q4 2023, up $172 million year-over-year.\r\n</li><li>Adjusted EBITDA: Increased to $3.60 billion for Q4 2023, a $165 million rise from the previous year.\r\n</li><li… [+4657 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "MarketWatch"
@@ -1407,6 +1515,7 @@ const total = {
             "content": "Twilio Inc. came up short with its revenue forecast for the current quarter, helping to drive its shares lower in Wednesdays extended session.\r\nFor the first quarter, Twilio TWLO models $1.025 billio… [+229 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "New York Post"
@@ -1420,6 +1529,7 @@ const total = {
             "content": "Morgan Stanley will reportedly slash several hundred bankers in its wealth management division in a cost-saving measure implemented by the Wall Street firm’s new CEO Ted Pick.\r\nThe company plans to c… [+3009 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Fb.com"
@@ -1433,6 +1543,7 @@ const total = {
             "content": null
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Yahoo Entertainment"
@@ -1446,6 +1557,7 @@ const total = {
             "content": "Salesforce's (CRM) stock was up more than 2% on Wednesday after launching a new AI-focused product on Slack.\r\nYahoo Finance's Dan Howley reports:\r\nSlack, the popular workplace messaging app, has offi… [+1774 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": "reuters",
                 "name": "Reuters"
@@ -1459,6 +1571,7 @@ const total = {
             "content": null
         },
         {
+            "category": "business", 
             "source": {
                 "id": "abc-news",
                 "name": "ABC News"
@@ -1472,6 +1585,7 @@ const total = {
             "content": "The U.S. Food and Drug Administration approved the first medication to treat severe frostbite on Wednesday.\r\nAurlumyn, manufactured by Actelion Pharmaceuticals US, Inc., is an injection to treat seve… [+2689 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": "axios",
                 "name": "Axios"
@@ -1485,6 +1599,7 @@ const total = {
             "content": null
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Fox Business"
@@ -1498,6 +1613,7 @@ const total = {
             "content": "William \"Bill\" Post, the man credited with having a key role in the invention of the Pop-Tart, died Saturday. He was 96.\r\nPost was one of seven children raised by Dutch immigrants in Grand Rapids, Mi… [+2643 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": "axios",
                 "name": "Axios"
@@ -1511,6 +1627,7 @@ const total = {
             "content": null
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "GMA"
@@ -1524,6 +1641,7 @@ const total = {
             "content": "Antarctica-bound passengers aboard a Norwegian Cruise Line ship claim their course was rerouted mid-voyage to instead travel around South America, nearly 200 miles off course from the destination the… [+2487 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Jalopnik"
@@ -1537,6 +1655,7 @@ const total = {
             "content": "It seems the stainless steel panels of the Tesla Cybertruck are not really stain less, and are turning out to be no less susceptible to stains than stainless kitchen appliances, which easily develop … [+3948 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Yahoo Entertainment"
@@ -1550,6 +1669,7 @@ const total = {
             "content": "Si vous cliquez sur « Tout accepter », nos partenaires (y compris 242 qui font partie du Cadre de transparence et de consentement dIAB) et nous utiliserons également des témoins et vos données person… [+982 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Fox Business"
@@ -1563,6 +1683,7 @@ const total = {
             "content": "The value of Bitcoin has risen to over $51,000 per token, a notable landmark in the cryptocurrency's long struggle to recover.\r\nThe total amount of Bitcoin in circulation is now worth over $1 trillio… [+2420 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "WTNH.com"
@@ -1576,6 +1697,7 @@ const total = {
             "content": "ENFIELD, Conn. (WTNH) Hundreds of people turned out for the opening of Raising Cane’s in Enfield on Tuesday despite the snowstorm.\r\nCars were lined around the building and into the Enfield Mall parki… [+1473 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Motley Fool"
@@ -1589,6 +1711,7 @@ const total = {
             "content": "Shares of Super Micro Computer(SMCI 11.25%) are making big gains in Wednesday's trading session. The red-hot server company's share price was up 6.6% as of 12:30 p.m. ET today, according to data from… [+1849 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": "the-wall-street-journal",
                 "name": "The Wall Street Journal"
@@ -1602,6 +1725,7 @@ const total = {
             "content": "Lyft shares hit a 52-week high Wednesday following the companys strong fourth-quarter results and despite confusion caused by a mistake in its earnings release.\r\nLyfts release Tuesday said one of its… [+867 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "CoinDesk"
@@ -1615,6 +1739,7 @@ const total = {
             "content": "<ul><li>Coinbase (COIN) is expected to report strong revenue numbers on Thursday when it reports fourth-quarter earnings after the bell.\r\n</li><li>Analysts predict a strong quarter for the crypto exc… [+3860 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Fox Business"
@@ -1628,6 +1753,7 @@ const total = {
             "content": "Jeff Bezos sold more Amazon stock. \r\nThe Amazon founder conducted the latest transactions involving nearly 12 million shares on Friday and Monday. They were disclosed in a Tuesday filing with the Sec… [+2324 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": "financial-times",
                 "name": "Financial Times"
@@ -1641,6 +1767,7 @@ const total = {
             "content": "Thousands of Porsche, Bentley and Audi cars have been impounded in US ports after a supplier to parent group Volkswagen found a Chinese subcomponent in the vehicles that breached anti-forced labour l… [+3977 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Tipranks.com"
@@ -1654,6 +1781,7 @@ const total = {
             "content": "Robinhood Markets (NYSE:HOOD) has been in the doldrums for the last two years, but it looks like a turnaround is underway, and progress is steadily taking hold based on its excellent Q4 earnings resu… [+6120 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "CNBC"
@@ -1667,6 +1795,7 @@ const total = {
             "content": "Check out the companies making headlines in midday trading.\r\nUber Uber's shares jumped 11%, climbing to a new 52-week high, after the ride-hailing company announced an inaugural $7 billion share repu… [+4452 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "WOWK 13 News"
@@ -1680,6 +1809,7 @@ const total = {
             "content": "BARBOURSVILLE, WV (WOWK) — The Target in the Merritt Creek Shopping Center in Barboursville is falling apart after the road behind it collapsed.\r\nAccording to emergency officials, a hill slip and con… [+906 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "MarketWatch"
@@ -1693,6 +1823,7 @@ const total = {
             "content": "Its been looking a lot like a bull market.The S&amp;P 500 closed above 5,000 on Friday, for the first time ever. The Dow Jones Industrial Average \r\n DJIA\r\n has been closing in on 40,000. Popular big … [+3125 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "ABC15 Arizona"
@@ -1706,6 +1837,7 @@ const total = {
             "content": "PHOENIX Waymo, the self-driving car division of Googles parent company, Alphabet, issued a recall for its own self-driving car software after two of its vehicles hit the same truck minutes apart.\r\nMi… [+2854 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "BBC News"
@@ -1719,6 +1851,7 @@ const total = {
             "content": "By Lora Jones &amp; Michael RaceBusiness reporters, BBC News\r\nThe Bank of England's governor has said UK inflation remaining unchanged is \"encouraging\", but he hinted it would not mean earlier intere… [+4815 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -1732,6 +1865,7 @@ const total = {
             "content": null
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Fox Business"
@@ -1745,6 +1879,7 @@ const total = {
             "content": "A deadly listeria outbreak tied to types of dairy products that infected people across nearly a dozen states prompted recalls from Costco, Walmart, Trader Joe's and other major retailers.   \r\nFederal… [+3654 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Deadline"
@@ -1758,6 +1893,7 @@ const total = {
             "content": "Activist Disney investor Nelson Peltz, whose Trian Capital is at war with CEO Bob Iger, blasted the company’s spree of earning-timed announcements last week as “spaghetti against the wall.” He also g… [+3164 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": "cnn",
                 "name": "CNN"
@@ -1771,6 +1907,7 @@ const total = {
             "content": "Wendys is sweetening its breakfast lineup with a new treat that comes from an unusual place: Another fast food chain.\r\nIts a risky bet that other chains have made before. Partnerships between rivals … [+3727 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": "associated-press",
                 "name": "Associated Press"
@@ -1784,6 +1921,7 @@ const total = {
             "content": "Thousands of ride-hailing and delivery workers in the U.S. and the U.K. went on strike on Valentines Day, calling for higher pay and other changes to their working conditions.\r\nIn the U.S., Uber and … [+4469 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Tipranks.com"
@@ -1797,6 +1935,7 @@ const total = {
             "content": "It has been a good start to the year for DraftKings (NASDAQ:DKNG) investors. The shares are up by 24% so far, essentially extending last years strong rally (the stock is now up by 170% on a trailing … [+2689 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Yahoo Entertainment"
@@ -1810,6 +1949,7 @@ const total = {
             "content": "Tesla (TSLA) CEO Elon Musk recently expressed his intention to move his company's incorporation from Delaware to Texas, weeks after the Delaware Chancery Court rejected his pay package. Columbia Law … [+7020 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": "fortune",
                 "name": "Fortune"
@@ -1823,6 +1963,7 @@ const total = {
             "content": "When investing, theres often a trade-off between risk and reward. Safer investmentslike bonds, money market funds, and certificates of deposits (CDs)tend to offer measly returns, at least in comparis… [+7212 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -1836,6 +1977,7 @@ const total = {
             "content": null
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Fox Business"
@@ -1849,6 +1991,7 @@ const total = {
             "content": "A key measure of home-purchase\r\n applications slumped last week amid a sharp increase in mortgage rates.\r\nThe Mortgage Bankers Association's (MBA) index of mortgage applications\r\n fell 2.3% for the w… [+2628 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": "cnn",
                 "name": "CNN"
@@ -1862,6 +2005,7 @@ const total = {
             "content": "Delta Air Lines is paying out $1.4 billion in profit sharing, more than double what it paid employees a year ago.\r\nThe payments, which more than 100,000 Delta employees received Wednesday, come to ab… [+2359 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Fox Business"
@@ -1875,6 +2019,7 @@ const total = {
             "content": "This Valentine's Day is bittersweet for bakery owners as they grapple with sky-high ingredient prices and customers who are reluctant to pay more for the same product.\r\n\"Last year we were paying arou… [+3198 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Yahoo Entertainment"
@@ -1888,6 +2033,7 @@ const total = {
             "content": "(Bloomberg) -- Uber Technologies Inc. will buy back as much as $7 billion in shares to return capital to shareholders after reporting its first full year of operating profit and consistent positive f… [+4011 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "CNBC"
@@ -1901,6 +2047,7 @@ const total = {
             "content": "Crude oil futures fell Wednesday, giving up gains from earlier in the session as stockpiles surged in the U.S. while demand fell. \r\nThe West Texas Intermediate contract for March lost 11 cents to $77… [+1140 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Hollywood Reporter"
@@ -1914,6 +2061,7 @@ const total = {
             "content": "A highly amusing, albeit scathing New York Times restaurant review of Guy Fieri’s American Kitchen &amp; Bar that went viral in 2012 is being used by attorneys acting for the Times in their lawsuit a… [+6718 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": "associated-press",
                 "name": "Associated Press"
@@ -1927,6 +2075,7 @@ const total = {
             "content": "In a classic Saturday Night Live sketch, a young man hands his girlfriend a Valentines Day gift: a bear dressed in a bee costume that he picked up at the drugstore.\r\nWhen did you get this? she asks w… [+4197 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Dlnews.com"
@@ -1940,6 +2089,7 @@ const total = {
             "content": "Spot Bitcoin exchange-traded funds are on course to beat annual estimates.\r\nThe news comes after the 10 US-based spot Bitcoin ETFs doubled their cumulative net flows to $3 billion in three days, with… [+2460 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "WAFB"
@@ -1953,6 +2103,7 @@ const total = {
             "content": "Since we announced our intent to be acquired by Elevance Health last year, it has become abundantly clear that the work we do each day is not only appreciated by our members, providers, group leaders… [+1337 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "SpaceNews"
@@ -1966,6 +2117,7 @@ const total = {
             "content": "TITUSVILLE, Fla. BAE Systems will complete its $5.5 billion acquisition of Ball Aerospace in days after securing regulatory approvals for the deal.\r\nThe companies announced Feb. 14 that they had all … [+2912 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "News12.com"
@@ -1979,6 +2131,7 @@ const total = {
             "content": null
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Yahoo Entertainment"
@@ -1992,6 +2145,7 @@ const total = {
             "content": "Si vous cliquez sur « Tout accepter », nos partenaires (y compris 242 qui font partie du Cadre de transparence et de consentement dIAB) et nous utiliserons également des témoins et vos données person… [+982 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -2005,6 +2159,7 @@ const total = {
             "content": null
         },
         {
+            "category": "business", 
             "source": {
                 "id": null,
                 "name": "Deadline"
@@ -2018,6 +2173,7 @@ const total = {
             "content": "Even archvillains need love. To celebrate Valentine’s Day, Joker: Folie à Deuxdirector Todd Phillips offered three photos featuring Joaquin Phoenix and Lady Gaga in character, adding the caption: “Ho… [+798 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -2031,6 +2187,7 @@ const total = {
             "content": null
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "[Removed]"
@@ -2044,6 +2201,7 @@ const total = {
             "content": "[Removed]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -2057,6 +2215,7 @@ const total = {
             "content": null
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "Entertainment Tonight"
@@ -2070,6 +2229,7 @@ const total = {
             "content": "Travis Kelce is trying his hand at moviemaking. ET can confirm that the 34-year-old Kansas City Chiefs tight end is an executive producer on the upcoming film My Dead Friend Zoe. The upcoming project… [+2213 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "Fox Business"
@@ -2083,6 +2243,7 @@ const total = {
             "content": "The extended edition of Dunkin’s hit \"DunKings\" Super Bowl ad has gone live amid the coffee and donut chain seeing major demand for its affiliated merchandise.\r\nIts debut came just a handful of days … [+2404 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "Billboard"
@@ -2096,6 +2257,7 @@ const total = {
             "content": "Kanye West and Ty Dolla $ign aren’t feeling the Valentine’s Day love as their Vultures 1track “Good (Don’t Die)” has been removed from Spotify after less than four days on the streaming service.\r\n“Go… [+1917 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "IndieWire"
@@ -2109,6 +2271,7 @@ const total = {
             "content": "Things are getting rowdy behind the scenes at “Road House.”\r\nOn Wednesday, Variety reported that the new “Road House” could have avoided a streaming debut, but before production began Amazon gave “th… [+2616 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "Hindustan Times"
@@ -2122,6 +2285,7 @@ const total = {
             "content": "Aries: Be alert and continue to be professional, for there could be a sharp turn in your career. People around you, colleagues and superiors, see you as a dedicated and efficient individual. Consider… [+5369 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": "axios",
                 "name": "Axios"
@@ -2135,6 +2299,7 @@ const total = {
             "content": null
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "Deadline"
@@ -2148,6 +2313,7 @@ const total = {
             "content": "Moviegoing is slowly getting back into fashion, with Paramount’s Bob Marley: One Lovebiopic seeing an estimated $12 million on Wednesday. That’s a record for a movie playing on Valentine’s Day midwee… [+1461 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "HuffPost"
@@ -2161,6 +2327,7 @@ const total = {
             "content": "Jennifer Lopez is revealing what really happened after she and Ben Affleck called off their wedding days before it was set to take place in 2003. \r\nWe didnt break up right at that moment. It happened… [+5439 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "ELLE.com"
@@ -2174,6 +2341,7 @@ const total = {
             "content": "Kristen Stewart gave Rolling Stonea very wide-ranging interviewand a peek into her home life and future plans with fiancée Dylan Meyer. \r\nStewart briefly touched on her annoyance with being asked abo… [+2823 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "Eonline.com"
@@ -2187,6 +2355,7 @@ const total = {
             "content": "Kanye West is shutting down this rumor.\r\nAfter it was reported that he bought a ticket in front of Taylor Swift's Super Bowl suite and she then had him removed, the rapper's rep told Forbes, \"This is… [+757 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": "entertainment-weekly",
                 "name": "Entertainment Weekly"
@@ -2200,6 +2369,7 @@ const total = {
             "content": "Actor Seann William Scott and his wife, Olivia Korenberg, are parting ways after four years of marriage.\r\nThe American Pie star, 47, filed for divorce Tuesday, according to court documents obtained b… [+1531 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": "associated-press",
                 "name": "Associated Press"
@@ -2213,6 +2383,7 @@ const total = {
             "content": "NEW YORK (AP) Nearly four years after Harvey Weinstein was convicted of rape and sent to prison, New Yorks highest court will hear arguments Wednesday in his quest to overturn the landmark #MeToo-era… [+4947 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "WWD"
@@ -2226,6 +2397,7 @@ const total = {
             "content": "The Knowles family has a new name making headlines. \r\nDaniel Julez Smith Jr., the son of Solange Knowles and her ex-husband Daniel Smith, debuted as a runway model at the Luar fall 2024 fashion show … [+1864 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "Wrestling Inc."
@@ -2239,6 +2411,7 @@ const total = {
             "content": "With Cody Rhodes set to face Undisputed WWE Universal Champion Roman Reigns at WrestleMania 40 this April, and WWE World Heavyweight Champion Seth Rollins awaiting the winner of the Men's Elimination… [+1165 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": "usa-today",
                 "name": "USA Today"
@@ -2252,6 +2425,7 @@ const total = {
             "content": null
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "Dexerto"
@@ -2265,6 +2439,7 @@ const total = {
             "content": "Popular YouTuber Twomad was found dead in his home after a welfare check by the LAPD.\r\nTwomad was found unresponsive on Tuesday, February 13 when police were called to check up on the content creator… [+1413 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "Nbc.com"
@@ -2278,6 +2453,7 @@ const total = {
             "content": "There's a dancer Usher needs to put on his radar for his next big show: John Legend's 7-month-old son, Wren! \r\nHow to Watch\r\nLegend's wife, author-model Chrissy Teigen, posted an adorable video to In… [+1722 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "[Removed]"
@@ -2291,6 +2467,7 @@ const total = {
             "content": "[Removed]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "Salon"
@@ -2304,6 +2481,7 @@ const total = {
             "content": null
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -2317,6 +2495,7 @@ const total = {
             "content": null
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": "fox-news",
                 "name": "Fox News"
@@ -2330,6 +2509,7 @@ const total = {
             "content": "If you are looking to nab a photo with \"Oppenheimer\" star Cillian Murphy, you're out of luck.\r\nThe Irish actor has implemented a no-photo policy with fans, something he has done for his own health.\r\n… [+2739 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": "axios",
                 "name": "Axios"
@@ -2343,6 +2523,7 @@ const total = {
             "content": null
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -2356,6 +2537,7 @@ const total = {
             "content": "Your browser isnt supported anymore. Update it to get the best YouTube experience and our latest features. Learn more\r\nRemind me later"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "Variety"
@@ -2369,6 +2551,7 @@ const total = {
             "content": "On the heels of a charismatic Super Bowl halftime performance, Usher is now bringing his music to the small screen. The eight-time Grammy winner has partnered with UCP, a division of Universal Studio… [+1237 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "Sports Illustrated"
@@ -2382,6 +2565,7 @@ const total = {
             "content": "1. As we said in Tuesday’s Traina Thoughts, this year’s Super Bowl between the Chiefs and Niners drew 123.4 million viewers.\r\nLast year’s Super Bowl between the Chiefs and Eagles drew 115.1 million v… [+2392 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "Miami Herald"
@@ -2395,6 +2579,7 @@ const total = {
             "content": null
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": "cbs-news",
                 "name": "CBS News"
@@ -2408,6 +2593,7 @@ const total = {
             "content": "Just days after Kansas City Chiefs star Travis Kelce won another Super Bowl, his older brother, Jason, told his sibling that he \"crossed the line\" when he bumped into his head coach Andy Reid in midd… [+2853 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "New York Post"
@@ -2421,6 +2607,7 @@ const total = {
             "content": "Meghan Markle and Prince Harry’s new website bearing their royal titles is being seen as a betrayal to the late Queen Elizabeth.\r\nThe site shows disloyalty to an agreement the Duke and Duchess of Sus… [+3085 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -2434,6 +2621,7 @@ const total = {
             "content": "Your browser isnt supported anymore. Update it to get the best YouTube experience and our latest features. Learn more\r\nRemind me later"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "The A.V. Club"
@@ -2447,6 +2635,7 @@ const total = {
             "content": "Widely considered one of the most quintessential romantic comedies of all time, Amélie feels as if it has always been around. In truth, though, Jean-Pierre Jeunets quirky French confection is relativ… [+4859 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": "bleacher-report",
                 "name": "Bleacher Report"
@@ -2460,6 +2649,7 @@ const total = {
             "content": "Louis Grasse/PXimages/Icon Sportswire via Getty Images\r\nBleacher Report catches you up on the latest news from the WWE Universe.\r\nThe Rock Warns Cody Rhodes\r\nAhead of his scheduled appearance on Frid… [+5858 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "Eater"
@@ -2473,6 +2663,7 @@ const total = {
             "content": "David Bouley, the legendary chef who indelibly shaped New York fine dining, has died at the age of 70, at his home in Kent, Connecticut, the New York Times first reported.\r\nBouleys wife, Nicole Barte… [+3150 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -2486,6 +2677,7 @@ const total = {
             "content": null
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "Deadline"
@@ -2499,6 +2691,7 @@ const total = {
             "content": "BridgertonSeason 3 is about to be the talk of the ton.\r\nIn honor of Valentine’s Day, the cast of the Netflix series as well as executive producer Shonda Rhimes, showrunner Jess Brownell, and author J… [+3600 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "Vulture"
@@ -2512,6 +2705,7 @@ const total = {
             "content": "Ive started and deleted at least five different openings to this recap, including one where Lea, Jess, and the ghost of Sydney were all witches around a fire, levitating and casting a spell on Maria.… [+12920 chars]"
         },
         {
+            "category": "entertainment", 
             "source": {
                 "id": null,
                 "name": "Hollywood Reporter"
@@ -2525,6 +2719,7 @@ const total = {
             "content": "Madame Web star Dakota Johnson says the film’s script underwent some “drastic changes” after she signed on to the project. \r\nThe Sony-Marvel film has been savaged by critics as one of the worst super… [+1731 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "Fci Academy"
@@ -2538,6 +2733,7 @@ const total = {
             "content": null
         },
         {
+            "category": "general", 
             "source": {
                 "id": "abc-news",
                 "name": "ABC News"
@@ -2551,6 +2747,7 @@ const total = {
             "content": "One person has died and at least 21 others were injured by gunfire in a shooting in Kansas City, Missouri, following the parade and rally for the Chiefs' Super Bowl win, officials said Wednesday.\r\nTh… [+4481 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": "abc-news",
                 "name": "ABC News"
@@ -2564,6 +2761,7 @@ const total = {
             "content": "The alleged gunman accused of shooting three Metropolitan Police Department officers in Washington, D.C., has surrendered, a law enforcement source told ABC News.\r\nThe incident unfolded Wednesday mor… [+2328 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": "axios",
                 "name": "Axios"
@@ -2577,6 +2775,7 @@ const total = {
             "content": null
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -2590,6 +2789,7 @@ const total = {
             "content": null
         },
         {
+            "category": "general", 
             "source": {
                 "id": "cnn",
                 "name": "CNN"
@@ -2603,6 +2803,7 @@ const total = {
             "content": "A single rabid coyote in Rhode Island is believed to have attacked two people in neighboring towns in the span of two days, state environmental officials said this week.\r\nAround 12:15 p.m. Friday, a … [+2587 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "NBCSports.com"
@@ -2616,6 +2817,7 @@ const total = {
             "content": "As the 49ers embark on a belated search for a new defensive coordinator, coach Kyle Shanahan says hes casting a wide net.\r\nIn the press conference announcing the firing of Steve Wilks after only one … [+2893 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": "cbs-news",
                 "name": "CBS News"
@@ -2629,6 +2831,7 @@ const total = {
             "content": "President Biden on Wednesday issued an executive order instructing federal immigration officials to refrain from deporting most Palestinian immigrants in the U.S., saying the months-long war in the G… [+2943 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "CNBC"
@@ -2642,6 +2845,7 @@ const total = {
             "content": "Japan's economy dipped into a technical recession, after unexpectedly contracting again in the October-December period, provisional government data showed Thursday. High inflation crimped domestic de… [+2643 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -2655,6 +2859,7 @@ const total = {
             "content": null
         },
         {
+            "category": "general", 
             "source": {
                 "id": "the-washington-post",
                 "name": "The Washington Post"
@@ -2668,6 +2873,7 @@ const total = {
             "content": "BEIRUT Israel on Wednesday launched its longest and heaviest attack on neighboring Lebanon since the start of the Gaza war, striking several locations in the south, killing at least one Hezbollah fig… [+5705 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "Spaceflight Now"
@@ -2681,6 +2887,7 @@ const total = {
             "content": "A Falcon 9 rocket supporting the USSF-124 mission for the Missile Defense Agency (MDA) and Space Development Agency (SDA) launches from pad 40 at Cape Canaveral Space Force Station. Image: Adam Berns… [+6597 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "Vox"
@@ -2694,6 +2901,7 @@ const total = {
             "content": "On February 13, the Washington Post reported that the Centers for Disease Control and Prevention (CDC) plans to issue new guidelines that would substantially pull back on recommendations for people i… [+7642 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "Yahoo Entertainment"
@@ -2707,6 +2915,7 @@ const total = {
             "content": "SAN FRANCISCO (AP) Internet networking pioneer Cisco Systems is jettisoning more than 4,000 employees, joining the parade of technology companies in a trend that has helped boost their profits and st… [+3610 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": "fox-news",
                 "name": "Fox News"
@@ -2720,6 +2929,7 @@ const total = {
             "content": "Join Fox News for access to this content\r\nPlus get unlimited access to thousands of articles, videos and more with your free account!\r\nPlease enter a valid email address.\r\nBy entering your email, you… [+1190 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "Space.com"
@@ -2733,6 +2943,7 @@ const total = {
             "content": "Space is part of Future US Inc, an international media group and leading digital publisher. Visit our corporate site.\r\n©\r\nFuture US, Inc. Full 7th Floor, 130 West 42nd Street,\r\nNew York,\r\nNY 10036."
         },
         {
+            "category": "general", 
             "source": {
                 "id": "axios",
                 "name": "Axios"
@@ -2746,6 +2957,7 @@ const total = {
             "content": null
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "Deadline"
@@ -2759,6 +2971,7 @@ const total = {
             "content": "Moviegoing is slowly getting back into fashion, with Paramount’s Bob Marley: One Lovebiopic seeing an estimated $12 million on Wednesday. That’s a record for a movie playing on Valentine’s Day midwee… [+1461 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": "reuters",
                 "name": "Reuters"
@@ -2772,6 +2985,7 @@ const total = {
             "content": null
         },
         {
+            "category": "general", 
             "source": {
                 "id": "cnn",
                 "name": "CNN"
@@ -2785,6 +2999,7 @@ const total = {
             "content": "The US has new intelligence on Russian military capabilities related to its efforts to deploy a nuclear anti-satellite system in space, according to multiple sources familiar with the intelligence.\r\n… [+6384 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "YouTube"
@@ -2798,6 +3013,7 @@ const total = {
             "content": null
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "Eonline.com"
@@ -2811,6 +3027,7 @@ const total = {
             "content": "Kanye West is shutting down this rumor.\r\nAfter it was reported that he bought a ticket in front of Taylor Swift's Super Bowl suite and she then had him removed, the rapper's rep told Forbes, \"This is… [+757 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "Florida Today"
@@ -2824,6 +3041,7 @@ const total = {
             "content": null
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "Fox Business"
@@ -2837,6 +3055,7 @@ const total = {
             "content": "William \"Bill\" Post, the man credited with having a key role in the invention of the Pop-Tart, died Saturday. He was 96.\r\nPost was one of seven children raised by Dutch immigrants in Grand Rapids, Mi… [+2643 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": "the-verge",
                 "name": "The Verge"
@@ -2850,6 +3069,7 @@ const total = {
             "content": "Apple fans are starting to return their Vision Pros\r\nApple fans are starting to return their Vision Pros\r\n / Comfort, headache, and eye strain are among the top reasons people say theyre returning th… [+3754 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": "al-jazeera-english",
                 "name": "Al Jazeera English"
@@ -2863,6 +3083,7 @@ const total = {
             "content": "Dozens of Palestinians have been seen leaving the besieged Nasser Hospital in Gazas southern city of Khan Younis after Israeli forces ordered the evacuation of the complex, but health officials say t… [+4615 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "Sports Illustrated"
@@ -2876,6 +3097,7 @@ const total = {
             "content": null
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "[Removed]"
@@ -2889,6 +3111,7 @@ const total = {
             "content": "[Removed]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "New York Post"
@@ -2902,6 +3125,7 @@ const total = {
             "content": "Meta boss Mark Zuckerberg ripped Apples $3,500 Vision Pro virtual reality headset and poked fun at the companys fanboy defenders in the latest sign of an escalating rivalry between the two tech giant… [+2673 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "Hollywood Reporter"
@@ -2915,6 +3139,7 @@ const total = {
             "content": "Madame Web star Dakota Johnson says the film’s script underwent some “drastic changes” after she signed on to the project. \r\nThe Sony-Marvel film has been savaged by critics as one of the worst super… [+1731 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "NDTV News"
@@ -2928,6 +3153,7 @@ const total = {
             "content": "The asteroid will approach within 4.6 million kilometres of Earth.\r\nNew Delhi: An asteroid designated as 2024 BR4 is set to make a breathtakingly close pass by Earth this Valentine's Day. Measuring b… [+1297 chars]"
         },
         {
+            "category": "general", 
             "source": {
                 "id": null,
                 "name": "VentureBeat"
@@ -2941,6 +3167,7 @@ const total = {
             "content": "Today, OpenAI announced it is adding a major upgrade to its signature web-based chatbot application, ChatGPT: persistent memory.\r\nRolling out slowly for selected users of ChatGPTs free tier and paid … [+966 chars]"
         },
         {
+            "category": "business", 
             "source": {
                 "id": "cnn",
                 "name": "CNN"
@@ -2958,15 +3185,17 @@ const total = {
 }
 
 let totalData=[];    // total.articles  를 아래에서 할당할 것이다.
+let searchedData=[]   // searched data의 전체
+let categoryData = []
+
 let paginatedDataList=[]  // [[{}..10개][{}...10개]...[]]
 // showingList = paginatedDataList[page-1]
-let searchedData=[]   // searched data의 전체
 let paginatedSearchedDataList=[]  // searched data paginated
-
-let totalResults 
 let paginatedDataListLength
+let totalResults 
 let searchedResults
-let searchedDataListlength
+let categoryResults
+
 
 let page =1
 const pageSize =10 // 한페이지에 보여질 item갯수
@@ -3116,21 +3345,25 @@ function moveToPage(pageNo){
 }
 
 
-function render(targetList){
+function render(){
     let showingList;
-    if(targetList.length ==1){
-        showingList = targetLsit;
+    if(paginatedDataList.length ==1){
+        showingList = paginatedDataList;
     } else{
-        showingList = targetList[page-1]
+        showingList = paginatedDataList[page-1]
     }
+    console.log('showingList ', showingList)
     
     const newsBoard = document.querySelector('#news-board')
     newsBoard.innerHTML =''; //비우고 시작
     const pagination = document.querySelector('.pagination');
     pagination.innerHTML =''// 기존내용 삭제
 
+    let newsHTML;
     if (showingList.length == 1){
-        const newsHTML = `
+        console.log('단 1개 데이터')
+        let [news] =[...showingList];
+        newsHTML = `
             <div class="row item">
                 <div class="col-lg-4">
                             <img src=${news.urlToImage || replaceImage}  />
@@ -3147,7 +3380,7 @@ function render(targetList){
         `
 
     } else {
-        const newsHTML = showingList.map(news => 
+        newsHTML = showingList.map(news => 
             `<div class="row item">
                 <div class="col-lg-4">
                             <img src=${news.urlToImage || replaceImage}  />
@@ -3180,6 +3413,15 @@ function render(targetList){
     const nextPage = document.querySelector('#next-page')
 
     const endIndexOfTheGroup = group.length-1  //해당그룹의 마지막 인덱스
+
+    // prev next 등 비활성화 여부
+    if(group.length ==1){
+        // 단 한개의 아이템만 있는 경우
+        prev.disabled = true;
+        next.disabled = true;
+        prevPage.disabled =true;
+        nextPage.disabled =true;
+    }
 
     if(currentIndex ==0){
         prev.disabled =true;
@@ -3276,11 +3518,33 @@ function search(){
     totalPages = Math.ceil(searchedResults / pageSize)
 
     groups = makeGroups()
-    paginatedSearchedDataList = paginateData(searchedData, pageSize)
-    render(paginatedSearchedDataList)
+    paginatedDataList = paginateData(searchedData, pageSize)
+    console.log('searchedData ', searchedData)
+    console.log('paginatedDataList ', paginatedDataList)
+    render()
  }
 
 
+ function getCategory(category){
+    categoryData = totalData.filter( item => item.category == category)
+
+    categoryResults = categoryData.length
+
+    page =1 ; //초기화
+    groupIndex =0;
+    currentIndex =0;
+
+    totalPages = Math.ceil(categoryResults / pageSize)
+
+    groups = makeGroups()
+    paginatedDataList = paginateData(categoryData, pageSize)
+    console.log('categoryData ', categoryData)
+    console.log('paginatedDataList ', paginatedDataList)
+    render()
+
+
+
+ }
 
 
 
