@@ -2960,8 +2960,14 @@ const total = {
 let totalData=[];    // total.articles  를 아래에서 할당할 것이다.
 let paginatedDataList=[]  // [[{}..10개][{}...10개]...[]]
 // showingList = paginatedDataList[page-1]
+let searchedData=[]   // searched data의 전체
+let paginatedSearchedDataList=[]  // searched data paginated
+
 let totalResults 
-let paginatedDataListLength 
+let paginatedDataListLength
+let searchedResults
+let searchedDataListlength
+
 let page =1
 const pageSize =10 // 한페이지에 보여질 item갯수
 const groupSize =5
@@ -2989,11 +2995,23 @@ totalPages = Math.ceil(totalResults / pageSize) // 23
 
 const replaceImage = 'noonatimes.png'
 
+
+//! 실행 코드
+groups = makeGroups()
+render(paginatedDataList)
+
+
+
+
 function paginateData(dataList, pageSize){
     const dataLength = dataList.length;
     let pagedList = []
     let list =[]
     let item;
+
+    if(dataLength == 1){ // dataList의 요소가 1개일 경우도 있다.
+        return [...dataList]
+    }
 
     for(let i=1; i<dataLength; i++){
         if(i % pageSize !=0){
@@ -3098,30 +3116,53 @@ function moveToPage(pageNo){
 }
 
 
-function render(){
-    let showingList = paginatedDataList[page-1]
+function render(targetList){
+    let showingList;
+    if(targetList.length ==1){
+        showingList = targetLsit;
+    } else{
+        showingList = targetList[page-1]
+    }
     
     const newsBoard = document.querySelector('#news-board')
     newsBoard.innerHTML =''; //비우고 시작
     const pagination = document.querySelector('.pagination');
     pagination.innerHTML =''// 기존내용 삭제
 
-
-    const newsHTML = showingList.map(news => 
-        `<div class="row item">
-            <div class="col-lg-4">
-                        <img src=${news.urlToImage || replaceImage}  />
-                    </div>
-                    <div class="col-lg-8">
-                        <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
-                        <p class='content'>${news.content || news.description}</p>
-                        <div>
-                            ${news.source.name} : ${news.publishedAt} 
+    if (showingList.length == 1){
+        const newsHTML = `
+            <div class="row item">
+                <div class="col-lg-4">
+                            <img src=${news.urlToImage || replaceImage}  />
                         </div>
-                    </div>
+                        <div class="col-lg-8">
+                            <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
+                            <p class='content'>${news.content || news.description}</p>
+                            <div>
+                                ${news.source.name} : ${news.publishedAt} 
+                            </div>
+                        </div>
+                </div>
             </div>
-        </div>
-    `).join('')
+        `
+
+    } else {
+        const newsHTML = showingList.map(news => 
+            `<div class="row item">
+                <div class="col-lg-4">
+                            <img src=${news.urlToImage || replaceImage}  />
+                        </div>
+                        <div class="col-lg-8">
+                            <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
+                            <p class='content'>${news.content || news.description}</p>
+                            <div>
+                                ${news.source.name} : ${news.publishedAt} 
+                            </div>
+                        </div>
+                </div>
+            </div>
+        `).join('')
+    }
 
     newsBoard.innerHTML = newsHTML;
     pagination.innerHTML = makePaginationHTML(groupIndex)
@@ -3196,6 +3237,48 @@ function handleFileInput(event){
     }
 }
 
+function search(){
+    const input = document.querySelector('#search-input')
+    const value = input.value;
+    // 일단 total.articles [{}{}{}{}...] 모든 객체를 순회하면서
+    // 각 객체.title (문자열) 이 해당 단어를 포함하고 있는 지를 찾아야 된다.
+    // 그런데, 문자열에서 해당단어를 포함하는 지를 찾으려면, 예를 들어
+    //  '여신의 품격: 장원영(Ive)' 라면,
+    // 해당검색어단어(장원영)으로 split 하면, 리스트를 2개도 반환한다.
+    // 만약 해당검색어단어가 없다면, 리스트는 하나 반환한다.
+    // 그러므로 해당문자열로 split('해당문자열')하고, if (result.length ==2)인 경우,
+    // 해당 객체를,  list.push(해당객체) 식으로 담는다.
+    // 만약 검색이 많이 되어 10개를 넘는다면, 그때는 paginationList로 만들어야 되지만, 일단은 기본리스트로, 화면을 구성해 보자.
+
+
+    // 구성해 보니, 해당 아이템 {}이 들어 있는 [{}{}{}{}...10개] 단위 리스트가 출력된다.
+    // 이 리스트 안에서 filter를 해서 해당 아이템이 있는 리스트만 추려내야 된다.
+    // 그러기 위해 render()함수를 , 이제 보여줄 전체 리스트를 인자로 전달하는 함수로 바꾼다.
+
+    const articles = total.articles;
+    let list =[]
+    for (let article of articles){
+        if(article.title.split(value).length == 2){
+            const item = {...article}  // 원본과 분리
+            list.push(item)
+        }
+    }
+    console.log('검색결과 : ', list)
+    console.log('아이템갯수 : ', list.length)
+
+    searchedData = list;
+    searchedResults = list.length
+
+    page =1 ; //초기화
+    groupIndex =0;
+    currentIndex =0;
+
+    totalPages = Math.ceil(searchedResults / pageSize)
+
+    groups = makeGroups()
+    paginatedSearchedDataList = paginateData(searchedData, pageSize)
+    render(paginatedSearchedDataList)
+ }
 
 
 
@@ -3204,9 +3287,3 @@ function handleFileInput(event){
 
 
 
-
-
-groups = makeGroups()
-
-
-render()
