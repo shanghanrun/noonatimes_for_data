@@ -3238,6 +3238,9 @@ function paginateData(dataList, pageSize){
     let list =[]
     let item;
 
+    if (totalResults ==0){
+        return [];
+    }
     if(dataLength == 1){ // dataList의 요소가 1개일 경우도 있다.
         return [...dataList]
     }
@@ -3296,6 +3299,10 @@ function makeGroups(){
 
 function makePaginationHTML(groupIndex){   // 1, 2, 3...
     
+    if(totalResults == 0){
+        return;
+    }
+
     const currentGroup = groupIndex      // nextGroup을 다루기 위해 변수 필요
     group = groups[currentGroup]  // 첫번째 그룹은 groups[0]  
                        // [1,2,3,4,5] 혹은 [6,7,8,9,10]
@@ -3346,8 +3353,12 @@ function moveToPage(pageNo){
 
 
 function render(){
+    if (totalResults == 0){
+        alert('해당 기사는 없습니다.')
+        return;
+    } // 아무 것도 안한다.
     let showingList;
-    if(paginatedDataList.length ==1){
+    if(paginatedDataList.length <=1){
         showingList = paginatedDataList;
     } else{
         showingList = paginatedDataList[page-1]
@@ -3398,6 +3409,7 @@ function render(){
     }
 
     newsBoard.innerHTML = newsHTML;
+    
     pagination.innerHTML = makePaginationHTML(groupIndex)
 
     console.log('page :', page)
@@ -3502,24 +3514,24 @@ function search(){
     for (let article of articles){
         if(article.title.split(value).length > 1){
             const item = {...article}  // 원본과 분리
+            console.log('서치 아이템 ',item)
             list.push(item)
-        }
+        } 
     }
     console.log('검색결과 : ', list)
     console.log('아이템갯수 : ', list.length)
 
-    searchedData = list;
-    searchedResults = list.length
-
+    totalData = list;   // 이것 totalData로 해도 된다.
+    totalResults = list.length // 
     page =1 ; //초기화
     groupIndex =0;
     currentIndex =0;
 
-    totalPages = Math.ceil(searchedResults / pageSize)
+    totalPages = Math.ceil(totalResults / pageSize)
 
     groups = makeGroups()
-    paginatedDataList = paginateData(searchedData, pageSize)
-    console.log('searchedData ', searchedData)
+    paginatedDataList = paginateData(totalData, pageSize)
+    console.log('searchedData ', totalData)
     console.log('paginatedDataList ', paginatedDataList)
     render()
  }
