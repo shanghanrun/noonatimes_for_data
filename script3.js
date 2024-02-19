@@ -3226,7 +3226,7 @@ const replaceImage = 'noonatimes.png'
 
 
 //! 실행 코드
-groups = makeGroups()
+groups = makeGroups(totalResults)
 render(paginatedDataList)
 
 
@@ -3269,8 +3269,8 @@ function paginateData(dataList, pageSize){
     return pagedList;
 }
 
-function makeGroups(){
-    totalPages = Math.ceil(totalResults / pageSize)
+function makeGroups(results){   // 들어오는 리절트에 따라서 그룹이 달라진다.
+    totalPages = Math.ceil(results / pageSize)
     console.log(totalPages)
     groups =[]
     let list =[]
@@ -3304,16 +3304,6 @@ function makePaginationHTML(groupIndex){   // 1, 2, 3...
     const currentGroup = groupIndex      // nextGroup을 다루기 위해 변수 필요
     group = groups[currentGroup]  // 첫번째 그룹은 groups[0]  
                        // [1,2,3,4,5] 혹은 [6,7,8,9,10]
-    
-
-    // 일단 페이지번호만 메긴다면
-    // let paginationHTML = group.map(i => {
-    //     return `<button onclick="moveToPage(${i})">${i}</button>`
-    //     }).join('')
-
-    // 나중에 <<prev page,   next page>> 를 누르는 버튼
-    // 이걸 누르면 groupIndex--    groupIndex++ ; render()
-
 
     let paginationHTML =`<li class="prev-li"><button class="page-btn" id="prev-page" onclick="moveToPage('prev page')">prev page</button></li><li class="page-li"><button class="page-btn" id="prev" onclick="moveToPage(${page-1})">Prev</button></li>`;
     // page가 전역변수라서 page-1 이 최신페이지에서 이전페이지가 된다.
@@ -3356,7 +3346,7 @@ function render(){
         return;
     } // 아무 것도 안한다.
     let showingList;
-    if(paginatedDataList.length <=1){
+    if(paginatedDataList.length ==1){
         showingList = paginatedDataList;
     } else{
         showingList = paginatedDataList[page-1]
@@ -3519,39 +3509,43 @@ function search(){
     console.log('검색결과 : ', list)
     console.log('아이템갯수 : ', list.length)
 
-    totalData = list;   // 이것 totalData로 해도 된다.
-    totalResults = list.length // 
+    searchedData = list;   // 이것 totalData로 해도 된다.(틀렸다...)
+    searchedResults = list.length // 
     page =1 ; //초기화
     groupIndex =0;
     currentIndex =0;
 
-    totalPages = Math.ceil(totalResults / pageSize)
+    totalPages = Math.ceil(searchedResults / pageSize)
 
-    groups = makeGroups()
-    paginatedDataList = paginateData(totalData, pageSize)
-    console.log('searchedData ', totalData)
+    groups = makeGroups(searchedResults)
+    paginatedDataList = paginateData(searchedData, pageSize)
+    console.log('searchedData ', searchedData)
     console.log('paginatedDataList ', paginatedDataList)
     render()
  }
 
 
  function getCategory(category){
+    console.log('카테고리 검색시작 :' )
+    console.log('category :', category)
+    categoryData =[];// 우선 비운다.
     categoryData = totalData.filter( item => item.category == category)
 
     categoryResults = categoryData.length
+    console.log('categoryResults :', categoryResults)
 
     page =1 ; //초기화
     groupIndex =0;
     currentIndex =0;
 
     totalPages = Math.ceil(categoryResults / pageSize)
+    console.log('totalPages :', totalPages)
 
-    groups = makeGroups()
+    groups = makeGroups(categoryResults)
     paginatedDataList = paginateData(categoryData, pageSize)
     console.log('categoryData ', categoryData)
     console.log('paginatedDataList ', paginatedDataList)
     render()
-
 
 
  }
