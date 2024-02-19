@@ -1,6 +1,6 @@
 const total = {
     "status": "ok",
-    "totalResults": 227,
+    "totalResults": 226,
     "articles": [
         {
             "category": "kr-enter",
@@ -478,20 +478,7 @@ const total = {
             "publishedAt": "2024-02-13T08:41:00Z",
             "content": ""
         },
-        {
-            "category": "kr", 
-            "source": {
-                "id": null,
-                "name": "Donga.com"
-            },
-            "author": null,
-            "title": "차은우, 올리비아 핫세 딸과 열애설 해명 “이래도 되는 건가?” - 동아일보",
-            "description": "가수 겸 배우 차은우가 미국 배우 인디아 아이슬리와의 열애설에 대해 해명했다. 아이슬리는 영화 ‘로미오와 줄리엣’(1968)으로 유명한 올리비아 핫세의 딸이다.  차은우는 14일…",
-            "url": "https://www.donga.com/news/Entertainment/article/all/20240215/123529952/1",
-            "urlToImage": "https://dimg.donga.com/a/669/0/95/5/wps/NEWS/IMAGE/2024/02/15/123529670.2.jpg",
-            "publishedAt": "2024-02-15T02:16:00Z",
-            "content": null
-        },
+        
         {
             "category": "kr", 
             "source": {
@@ -3227,7 +3214,7 @@ const replaceImage = 'noonatimes.png'
 
 //! 실행 코드
 groups = makeGroups(totalResults)
-render(paginatedDataList)
+render(totalResults)
 
 
 
@@ -3340,17 +3327,18 @@ function moveToPage(pageNo){
 }
 
 
-function render(){
-    if (totalResults == 0){
+function render(results){
+    if (results == 0){
         alert('해당 기사는 없습니다.')
         return;
     } // 아무 것도 안한다.
-    let showingList;
-    if(paginatedDataList.length ==1){
-        showingList = paginatedDataList;
+    let showingList =[];
+    if (paginatedDataList.length ==1){   // [{객체1개}]
+        showingList =[...paginatedDataList]  // 객체를 리스트에 담아준다.
     } else{
-        showingList = paginatedDataList[page-1]
+        showingList = [...paginatedDataList[page-1]]
     }
+    
     console.log('showingList ', showingList)
     
     const newsBoard = document.querySelector('#news-board')
@@ -3358,43 +3346,20 @@ function render(){
     const pagination = document.querySelector('.pagination');
     pagination.innerHTML =''// 기존내용 삭제
 
-    let newsHTML;
-    if (showingList.length == 1){
-        console.log('단 1개 데이터')
-        let [news] =[...showingList];
-        newsHTML = `
-            <div class="row item">
+    let newsHTML = showingList.map(news => 
+            `<div class="row item">
                 <div class="col-lg-4">
-                            <img src=${news.urlToImage || replaceImage}  />
-                        </div>
-                        <div class="col-lg-8">
-                            <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
-                            <p class='content'>${news.content || news.description}</p>
-                            <div>
-                                ${news.source.name} : ${news.publishedAt} 
-                            </div>
-                        </div>
+                    <img src=${news.urlToImage || replaceImage}  />
+                </div>
+                <div class="col-lg-8">
+                    <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
+                    <p class='content'>${news.content || news.description}</p>
+                    <div>${news.source.name} : ${news.publishedAt}</div>
                 </div>
             </div>
         `
+        ).join('')
 
-    } else {
-        newsHTML = showingList.map(news => 
-            `<div class="row item">
-                <div class="col-lg-4">
-                            <img src=${news.urlToImage || replaceImage}  />
-                        </div>
-                        <div class="col-lg-8">
-                            <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
-                            <p class='content'>${news.content || news.description}</p>
-                            <div>
-                                ${news.source.name} : ${news.publishedAt} 
-                            </div>
-                        </div>
-                </div>
-            </div>
-        `).join('')
-    }
 
     newsBoard.innerHTML = newsHTML;
     
@@ -3452,32 +3417,32 @@ function getDetail(url){
      window.location.href = url;
 }
 
-function handleFileInput(event){
-    const file = event.target.files[0];
-    if(file){
-        const reader = new FileReader();
+// function handleFileInput(event){
+//     const file = event.target.files[0];
+//     if(file){
+//         const reader = new FileReader();
     
-        // 2. 파일을 읽어온 후 실행되는 함수
-        reader.onload = (e) => {
-            const contents = e.target.result;
-            const data = JSON.parse(contents)
-            console.log('data: ', data)
-            console.log('data.status: ', data.status)
-            console.log('data.totalResults: ', data.totalResults)
+//         // 2. 파일을 읽어온 후 실행되는 함수
+//         reader.onload = (e) => {
+//             const contents = e.target.result;
+//             const data = JSON.parse(contents)
+//             console.log('data: ', data)
+//             console.log('data.status: ', data.status)
+//             console.log('data.totalResults: ', data.totalResults)
             
-            newsList = data.articles
-            console.log('newsList :', newsList)
+//             newsList = data.articles
+//             console.log('newsList :', newsList)
 
-            render();
+//             render(totalResults);
             
-            // 여기서 파일 내용을 가지고 원하는 작업을 수행할 수 있습니다.
-        };
-        // 1. 파일을 읽어온다. (비동기)
-        reader.readAsText(file);
-    } else{
-        console.log('파일을 선택하지 않았습니다.')
-    }
-}
+//             // 여기서 파일 내용을 가지고 원하는 작업을 수행할 수 있습니다.
+//         };
+//         // 1. 파일을 읽어온다. (비동기)
+//         reader.readAsText(file);
+//     } else{
+//         console.log('파일을 선택하지 않았습니다.')
+//     }
+// }
 
 function search(){
     const input = document.querySelector('#search-input')
@@ -3521,7 +3486,7 @@ function search(){
     paginatedDataList = paginateData(searchedData, pageSize)
     console.log('searchedData ', searchedData)
     console.log('paginatedDataList ', paginatedDataList)
-    render()
+    render(searchedResults)
  }
 
 
@@ -3545,7 +3510,7 @@ function search(){
     paginatedDataList = paginateData(categoryData, pageSize)
     console.log('categoryData ', categoryData)
     console.log('paginatedDataList ', paginatedDataList)
-    render()
+    render(categoryResults)
 
 
  }
