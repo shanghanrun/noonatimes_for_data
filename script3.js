@@ -3295,7 +3295,7 @@ function makePaginationHTML(groupIndex){   // 1, 2, 3...
     let paginationHTML =`<li class="prev-li"><button class="page-btn" id="prev-page" onclick="moveToPage('prev page')">prev page</button></li><li class="page-li"><button class="page-btn" id="prev" onclick="moveToPage(${page-1})">Prev</button></li>`;
     // page가 전역변수라서 page-1 이 최신페이지에서 이전페이지가 된다.
     
-    paginationHTML += group.map(i => {
+    paginationHTML +=  group.map(i => {
         return `<button class="page-btn" id="page" onclick="moveToPage(${i})">${i}</button>`
         }).join('')
 
@@ -3346,7 +3346,7 @@ function render(results){
     const pagination = document.querySelector('.pagination');
     pagination.innerHTML =''// 기존내용 삭제
 
-    let newsHTML = showingList.map(news => 
+    let newsHTML =  showingList.map(news => 
             `<div class="row item">
                 <div class="col-lg-4">
                     <img src=${news.urlToImage || replaceImage}  />
@@ -3363,7 +3363,7 @@ function render(results){
 
     newsBoard.innerHTML = newsHTML;
     
-    pagination.innerHTML = makePaginationHTML(groupIndex)
+    pagination.innerHTML =  makePaginationHTML(groupIndex)
 
     console.log('page :', page)
     console.log('currentIndex :', currentIndex)
@@ -3414,7 +3414,7 @@ function render(results){
 
 
 function getDetail(url){
-     window.location.href = url;
+    window.location.href = url;
 }
 
 // function handleFileInput(event){
@@ -3445,6 +3445,8 @@ function getDetail(url){
 // }
 
 function search(){
+    paginatedDataList =[];
+    searchedData =[]; // 일단비운다.
     const input = document.querySelector('#search-input')
     const value = input.value;
     // 일단 total.articles [{}{}{}{}...] 모든 객체를 순회하면서
@@ -3487,10 +3489,10 @@ function search(){
     console.log('searchedData ', searchedData)
     console.log('paginatedDataList ', paginatedDataList)
     render(searchedResults)
- }
+}
 
 
- function getCategory(category){
+function getCategory(category){
     console.log('카테고리 검색시작 :' )
     console.log('category :', category)
     categoryData =[];// 우선 비운다.
@@ -3509,11 +3511,11 @@ function search(){
     groups = makeGroups(categoryResults)
     paginatedDataList = paginateData(categoryData, pageSize)
     console.log('categoryData ', categoryData)
-    console.log('paginatedDataList ', paginatedDataList)
+    console.log('paginatedDataList ', paginatedDataList)     
     render(categoryResults)
 
 
- }
+}
 
 
 
