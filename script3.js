@@ -3270,28 +3270,26 @@ function paginateData(dataList, pageSize){
 }
 
 function makeGroups(){
-    // const totalPages = Math.ceil(totalResults / pageSize)  // 227 / 10 --> 23
+    totalPages = Math.ceil(totalResults / pageSize)
     console.log(totalPages)
     groups =[]
     let list =[]
     for(let i=1; i<=totalPages; i++){
         
         if( i % groupSize != 0){
-            if( i==1){
-                list.push(i)   // [1]
-            }
-            list.push(i+1)     // 2, 3, 4, 5
+              list.push(i)   // [1]
         } else{           // 5의 배수
+            list.push(i)  // [....5]까지 넣음
             groups.push(list)   // [1,2,3,4,5]
-            list =[]
-            list.push(i+1)       // [6]
+            list =[] // 다시 비움
         }
     
-        if ( i == totalPages){
-            list.pop() //  i+1로 잘못 추가된 것 뺀다.
+        if ( i == totalPages && list.length >0){
             groups.push(list)
         }
     }
+
+
     console.log('groups : ', groups)
     console.log('groups.length : ', groups.length)
     return groups
