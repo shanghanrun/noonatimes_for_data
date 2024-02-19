@@ -3171,18 +3171,13 @@ const total = {
     ]
 }
 
-let totalData=[];    // total.articles  를 아래에서 할당할 것이다.
-let searchedData=[]   // searched data의 전체
-let categoryData = []
-
+const totalData= total.articles; // 가장 기본적인 데이터 공급원
+let basicDataList =[]
 let paginatedDataList=[]  // [[{}..10개][{}...10개]...[]]
-// showingList = paginatedDataList[page-1]
-let paginatedSearchedDataList=[]  // searched data paginated
 let paginatedDataListLength
 let totalResults 
-let searchedResults
-let categoryResults
-
+let totalPages
+let searching = false;
 
 let page =1
 const pageSize =10 // 한페이지에 보여질 item갯수
@@ -3197,9 +3192,11 @@ let currentIndex = 0;     //해당그룹에서 위치 인덱스 [1,2,3,4,5] 에�
 // 여기서 값을 정하려 하면 '오류'가 난다. 그 이유는 totalResults가 아직 정해지지 않았기 때문이다.
 // 저 맨 아래에서 totalPages를 정해야 된다.
 
-totalData = total.articles;
-paginatedDataList = paginateData(totalData, pageSize)  // [ []...23개 ]
-console.log('total.articles.length :', total.articles.length)  // 227
+
+// 첫화면을 위해
+basicDataList = [...totalData]
+paginatedDataList = paginateData(basicDataList, pageSize)  // [ []...23개 ]
+console.log('total.articles.length :', total.articles.length)  // 226
 /**
  * totalData = total.articles;  // [{},{},{},{}....]
  * paginatedDataList = paginateData(totalData, pageSize)  // [ [{}..10개]...23개 ] 
@@ -3214,7 +3211,7 @@ const replaceImage = 'noonatimes.png'
 
 //! 실행 코드
 groups = makeGroups(totalResults)
-render(totalResults)
+render()
 
 
 
@@ -3327,17 +3324,30 @@ function moveToPage(pageNo){
 }
 
 
-function render(results){
-    if (results == 0){
+function render(){
+    // render전에 basicDataList, pagiinatedDataList가 정해져야 된다.
+    if (totalResults == 0){
         alert('해당 기사는 없습니다.')
         return;
     } // 아무 것도 안한다.
     let showingList =[];
-    if (paginatedDataList.length ==1){   // [{객체1개}]
-        showingList =[...paginatedDataList]  // 객체를 리스트에 담아준다.
+    if (searching){
+        if (totalResults == 1){
+            showingList = [...paginatedDataList]
+        } else {
+            [showingList] = [...paginatedDataList]
+        }
+        
     } else{
-        showingList = [...paginatedDataList[page-1]]
+        showingList = paginatedDataList[page-1]
     }
+    searching = false; // 다시 원래 복귀
+    
+    // if (paginatedDataList.length ==1){   // [{객체1개}]
+    //     showingList =[...paginatedDataList]  // 객체를 리스트에 담아준다.
+    // } else{
+    //     showingList = paginatedDataList[page-1]
+    // }
     
     console.log('showingList ', showingList)
     
@@ -3346,8 +3356,11 @@ function render(results){
     const pagination = document.querySelector('.pagination');
     pagination.innerHTML =''// 기존내용 삭제
 
-    let newsHTML =  showingList.map(news => 
-            `<div class="row item">
+    let newsHTML = '';
+    for (let i = 0; i < showingList.length; i++) {
+        const news = showingList[i];
+        newsHTML += `
+            <div class="row item">
                 <div class="col-lg-4">
                     <img src=${news.urlToImage || replaceImage}  />
                 </div>
@@ -3357,8 +3370,21 @@ function render(results){
                     <div>${news.source.name} : ${news.publishedAt}</div>
                 </div>
             </div>
-        `
-        ).join('')
+        `;
+    }
+    // let newsHTML =  showingList.map(news => 
+    //         `<div class="row item">
+    //             <div class="col-lg-4">
+    //                 <img src=${news.urlToImage || replaceImage}  />
+    //             </div>
+    //             <div class="col-lg-8">
+    //                 <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
+    //                 <p class='content'>${news.content || news.description}</p>
+    //                 <div>${news.source.name} : ${news.publishedAt}</div>
+    //             </div>
+    //         </div>
+    //     `
+    //     ).join('')
 
 
     newsBoard.innerHTML = newsHTML;
@@ -3445,8 +3471,7 @@ function getDetail(url){
 // }
 
 function search(){
-    paginatedDataList =[];
-    searchedData =[]; // 일단비운다.
+    searching = true;
     const input = document.querySelector('#search-input')
     const value = input.value;
     // 일단 total.articles [{}{}{}{}...] 모든 객체를 순회하면서
@@ -3464,55 +3489,55 @@ function search(){
     // 이 리스트 안에서 filter를 해서 해당 아이템이 있는 리스트만 추려내야 된다.
     // 그러기 위해 render()함수를 , 이제 보여줄 전체 리스트를 인자로 전달하는 함수로 바꾼다.
 
-    const articles = total.articles;
+    // const articles = total.articles; 여기서 잘못 일 수도 있다.
+    // basicDataList 가 값을 갖고 있다.
     let list =[]
-    for (let article of articles){
-        if(article.title.split(value).length > 1){
-            const item = {...article}  // 원본과 분리
+    for (let item of totalData){
+        if(item.title.split(value).length > 1){
+            list.push({...item})  // 원본과 분리
             console.log('서치 아이템 ',item)
-            list.push(item)
         } 
     }
     console.log('검색결과 : ', list)
     console.log('아이템갯수 : ', list.length)
 
-    searchedData = list;   // 이것 totalData로 해도 된다.(틀렸다...)
-    searchedResults = list.length // 
+    basicDataList = [...list];   // 이것 totalData로 해도 된다.(틀렸다...)
+    totalResults = basicDataList.length // 
     page =1 ; //초기화
     groupIndex =0;
     currentIndex =0;
 
-    totalPages = Math.ceil(searchedResults / pageSize)
+    totalPages = Math.ceil(totalResults / pageSize)
 
-    groups = makeGroups(searchedResults)
-    paginatedDataList = paginateData(searchedData, pageSize)
-    console.log('searchedData ', searchedData)
+    groups = makeGroups(totalResults)
+    paginatedDataList = paginateData(basicDataList, pageSize)
+    console.log('검색된 데이터 ', basicDataList)
     console.log('paginatedDataList ', paginatedDataList)
-    render(searchedResults)
+    render()
 }
 
 
 function getCategory(category){
     console.log('카테고리 검색시작 :' )
     console.log('category :', category)
-    categoryData =[];// 우선 비운다.
-    categoryData = totalData.filter( item => item.category == category)
+    let list =[];// 우선 비운다.
+    list = totalData.filter( item => item.category == category)
 
-    categoryResults = categoryData.length
-    console.log('categoryResults :', categoryResults)
+    basicDataList = [...list]
+    totalResults = basicDataList.length
 
     page =1 ; //초기화
     groupIndex =0;
     currentIndex =0;
 
-    totalPages = Math.ceil(categoryResults / pageSize)
+    totalPages = Math.ceil(totalResults / pageSize)
     console.log('totalPages :', totalPages)
 
-    groups = makeGroups(categoryResults)
-    paginatedDataList = paginateData(categoryData, pageSize)
-    console.log('categoryData ', categoryData)
+    groups = makeGroups(totalResults)
+    paginatedDataList = paginateData(basicDataList, pageSize)
+    console.log('categoryData ', basicDataList)
     console.log('paginatedDataList ', paginatedDataList)     
-    render(categoryResults)
+    render()
 
 
 }
