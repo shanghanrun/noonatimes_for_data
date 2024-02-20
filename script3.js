@@ -3176,7 +3176,7 @@ let basicDataList =[]
 let paginatedDataList=[]  // [[{}..10개][{}...10개]...[]]
 let paginatedDataListLength
 let totalResults 
-let totalPages
+let totalGroupPages
 let searching = false;
 
 let page =1
@@ -3188,9 +3188,9 @@ let groupIndex =0;
 let currentIndex = 0;     //해당그룹에서 위치 인덱스 [1,2,3,4,5] 에서
 // 2 페이지를 보여주고 있다면 currentIndex는 1
 
-// const totalPages = Math.ceil(totalResults / pageSize) // 23
+// const totalGroupPages = Math.ceil(totalResults / pageSize) // 23
 // 여기서 값을 정하려 하면 '오류'가 난다. 그 이유는 totalResults가 아직 정해지지 않았기 때문이다.
-// 저 맨 아래에서 totalPages를 정해야 된다.
+// 저 맨 아래에서 totalGroupPages를 정해야 된다.
 
 
 // 첫화면을 위해
@@ -3204,7 +3204,7 @@ console.log('total.articles.length :', total.articles.length)  // 226
 
 totalResults = total.articles.length;
 pageinatedListLength = paginatedDataList.length 
-totalPages = Math.ceil(totalResults / pageSize) // 23
+totalGroupPages = Math.ceil(totalResults / pageSize) // 23
 
 const replaceImage = 'noonatimes.png'
 
@@ -3214,66 +3214,47 @@ groups = makeGroups(totalResults)
 render()
 
 
-
-
 function paginateData(dataList, pageSize){
-    const dataLength = dataList.length;
-    let pagedList = []
+    const pagedList =[]
     let list =[]
-    let item;
+    const dataLength = dataList.length
 
-    if (totalResults ==0){
-        return [];
-    }
-    if(dataLength == 1){ // dataList의 요소가 1개일 경우도 있다.
-        return [...dataList]
+    if (dataLength <= pageSize){   // 일단 pageSize 5로 생각
+        console.log('paginatedData :', dataList)
+        return dataList
     }
 
-    for(let i=1; i<dataLength; i++){
-        if(i % pageSize !=0){
-            if(i==1){
-                item = {...dataList[0]}
-                list.push(item)
-            }
-            item = {...dataList[i]}
-            list.push(item)
-        } else{   //10 의 배수
-            pagedList.push(list)
+    for( let i=0; i<dataLength; i++){  
+        list.push(dataList[i])         
+        if(list.length % pageSize == 0){
+            pagedList.push([...list])
             list =[]
-            item = {...dataList[i]}
-            list.push(item)
-        }
-
-        if(i == dataLength -1){
-            pagedList.push(list)
-        }
+        }  
     }
-    console.log('pagedList :', pagedList)
-    console.log('length :', pagedList.length)
-    return pagedList;
+    // 나머지 넣지 못한 것
+    if (list.length > 0){
+        pagedList.push([...list])
+    }
+    console.log('paginatedData :', pagedList)
+    return pagedList    
 }
 
+
 function makeGroups(results){   // 들어오는 리절트에 따라서 그룹이 달라진다.
-    totalPages = Math.ceil(results / pageSize)
-    console.log(totalPages)
+    totalGroupPages = Math.ceil(results / pageSize)
+    console.log(totalGroupPages)
     groups =[]
     let list =[]
-    for(let i=1; i<=totalPages; i++){
-        
-        if( i % groupSize != 0){
-              list.push(i)   // [1]
-        } else{           // 5의 배수
-            list.push(i)  // [....5]까지 넣음
-            groups.push(list)   // [1,2,3,4,5]
-            list =[] // 다시 비움
-        }
-    
-        if ( i == totalPages && list.length >0){
-            groups.push(list)
-        }
+    for(let i=1; i<=totalGroupPages; i++){
+        list.push(i)
+        if( i % groupSize == 0){   // 일단 groupSize 5로 가정
+            groups.push([...list])  // 이렇게 독립해야
+            list =[]               // list를 변화시켜도 영향 안받는다.
+        } 
     }
-
-
+    if(list.length > 0){
+        groups.push([...list])
+    }
     console.log('groups : ', groups)
     console.log('groups.length : ', groups.length)
     return groups
@@ -3296,7 +3277,7 @@ function makePaginationHTML(groupIndex){   // 1, 2, 3...
         return `<button class="page-btn" id="page" onclick="moveToPage(${i})">${i}</button>`
         }).join('')
 
-    paginationHTML += `<li class="next-li"><button class="page-btn" id="next" onclick="moveToPage(${page+1})">Next</button></li><li class="next-li"><button class="page-btn" id="next-page" onclick="moveToPage('next page')">next page</button><span>${page} of ${totalPages} pages</span></li>`
+    paginationHTML += `<li class="next-li"><button class="page-btn" id="next" onclick="moveToPage(${page+1})">Next</button></li><li class="next-li"><button class="page-btn" id="next-page" onclick="moveToPage('next page')">next page</button><span>${page} of ${totalGroupPages} pages</span></li>`
 
 
     return paginationHTML;
@@ -3331,24 +3312,12 @@ function render(){
         return;
     } // 아무 것도 안한다.
     let showingList =[];
-    if (searching){
-        if (totalResults == 1){
-            showingList = [...paginatedDataList]
-        } else {
-            [showingList] = [...paginatedDataList]
-        }
-        
+
+    if (totalResults <= groupSize){
+        showingList = [...paginatedDataList]
     } else{
         showingList = paginatedDataList[page-1]
     }
-    searching = false; // 다시 원래 복귀
-    
-    // if (paginatedDataList.length ==1){   // [{객체1개}]
-    //     showingList =[...paginatedDataList]  // 객체를 리스트에 담아준다.
-    // } else{
-    //     showingList = paginatedDataList[page-1]
-    // }
-    
     console.log('showingList ', showingList)
     
     const newsBoard = document.querySelector('#news-board')
@@ -3406,12 +3375,15 @@ function render(){
     const endIndexOfTheGroup = group.length-1  //해당그룹의 마지막 인덱스
 
     // prev next 등 비활성화 여부
-    if(group.length ==1){
+    if(group.length ==1){  
         // 단 한개의 아이템만 있는 경우
         prev.disabled = true;
         next.disabled = true;
         prevPage.disabled =true;
         nextPage.disabled =true;
+    }
+    if(group.length <= groupSize){
+        nextPage.disabled = true;
     }
 
     if(currentIndex ==0){
@@ -3507,7 +3479,7 @@ function search(){
     groupIndex =0;
     currentIndex =0;
 
-    totalPages = Math.ceil(totalResults / pageSize)
+    totalGroupPages = Math.ceil(totalResults / pageSize)
 
     groups = makeGroups(totalResults)
     paginatedDataList = paginateData(basicDataList, pageSize)
@@ -3530,8 +3502,8 @@ function getCategory(category){
     groupIndex =0;
     currentIndex =0;
 
-    totalPages = Math.ceil(totalResults / pageSize)
-    console.log('totalPages :', totalPages)
+    totalGroupPages = Math.ceil(totalResults / pageSize)
+    console.log('totalGroupPages :', totalGroupPages)
 
     groups = makeGroups(totalResults)
     paginatedDataList = paginateData(basicDataList, pageSize)

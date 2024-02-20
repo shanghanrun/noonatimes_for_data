@@ -34,3 +34,13 @@ search 작업
 
 search작업이 더 빠를 것 같다.
 search 란을 만들고, ....
+
+
+======
+search의 경우 '한'으로 검색하면
+4페이지가 끝인데.. next page가 활성화 되어 있다.
+이것 교정해야 된다.
+if(group.length <= groupSize){
+        nextPage.disabled = true;
+    }
+이걸로 교정되었다.
